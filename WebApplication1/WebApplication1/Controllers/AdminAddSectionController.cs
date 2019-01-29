@@ -9,11 +9,8 @@ namespace WebApplication1.Controllers
     public class AdminAddSectionController : Controller
     {
         // GET: AdminAddSection
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult Addsection()
+      
+        public ActionResult AddSection()
         {
             return View();
         }

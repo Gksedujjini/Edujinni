@@ -13,7 +13,12 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-        public ActionResult Achievement()
+
+        public ActionResult AddAchievements()
+        {
+            return View();
+        }
+        public ActionResult ViewAchievements()
         {
             return View();
         }

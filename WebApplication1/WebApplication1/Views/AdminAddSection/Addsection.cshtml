@@ -1,0 +1,130 @@
+﻿@model WebApplication1.Models.Admin.Addsection
+@{
+//Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>AddSubjects</title>
+    <style>
+        #cntnr {
+            background-color: #ebebe0;
+            width: 95%;
+            border-radius: 10px;
+        }
+
+        #dropdownMenuButton {
+            background-color: white;
+            border-radius: 20px;
+            width: 83%;
+        }
+
+        #div1 {
+            background-color: white;
+        }
+
+        #input1 {
+            border-radius: 10px;
+            float: right;
+            background-color: blue;
+            color: white;
+            min-width: 50px;
+            width: 100px;
+            margin-top: 5px;
+        }
+
+        #input2 {
+            border-radius: 10px;
+            float: right;
+            background-color: red;
+            color: white;
+            min-width: 50px;
+            width: 100px;
+            margin-top: 5px;
+        }
+
+        #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 55px;
+            color: green;
+            width: 50px;
+            margin-top: -8px;
+        }
+
+        #addDiv {
+            width: 58px;
+            float: right;
+            margin-top: 5px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="row" style="background-color:blue;">
+        <div class="col-md ml-2 mt-2 mb-2">
+            <i class="fa fa-user-circle fa-2x mt-2" style="color:silver; float:left;"></i>
+            <label class="mt-2" style="color:white; float:left; font-size:17px;">Kakatiya Educational Society</label>
+            @*<input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddClass","Admin")'"
+                value="Add Class" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">*@
+            <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddClass", "Admin")'"
+                    style="border-radius:5px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;">
+                <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Add Class
+            </button>
+        </div>
+    </div>
+    <div class="container mt-4" id="cntnr">
+        <br />
+        <div class="row justify-content-center">
+            <h2>Add Section</h2>
+        </div>
+        <div class="row justify-content-center mt-2">
+            <h4>Section Name</h4>
+            <div class="col-md-3">
+                @Html.TextBoxFor(Model => Model.SectionName, new { @class = "form-control", @placeholder = "Enter Section Name" })
+            </div>
+        </div>
+        <div class="row justify-content-around mt-4">
+            <input type="button" value="Save" class="btn btn-success" style="width:100px;" />
+        </div>
+        <br />
+        <br />
+        @*<div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
+                //DATA IS SHOWN IN GRID VIEW
+            </div>*@
+        <br />
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="@Url.Action("AddClass","Admin")">
+                <i class="fa fa-plus-circle" id="upload-data"></i>
+                <div id="addDiv"><label class="ml-2">Add</label></div>
+            </a>
+        </div>
+        <br />
+    </div><br />
+</body>
+</html>

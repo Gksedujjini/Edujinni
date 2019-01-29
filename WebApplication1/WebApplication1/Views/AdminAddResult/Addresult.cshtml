@@ -1,0 +1,148 @@
+﻿@model WebApplication1.Models.Admin.AddResult
+@{
+// Layout = null;
+}
+@using (Html.BeginForm("AddResultView", "Home", FormMethod.Post))
+{
+
+    <!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                crossorigin="anonymous"></script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+        <link href="Content/sb-admin.css" rel="stylesheet">
+        <title>Add Result View</title>
+        <style>
+            .form-control {
+                border-radius: 20px;
+                background-color: #f2f2f2;
+            }
+
+            #search {
+                background-color: #f2f2f2;
+                border: none;
+                border-radius: 20px;
+                margin: 0px 0;
+                outline: none;
+                padding: 8px;
+                box-sizing: border-box;
+                transition: 0.3s;
+            }
+
+            .inputWithIcon #search {
+                padding-left: 40px;
+            }
+
+            .inputWithIcon {
+                position: relative;
+            }
+
+                .inputWithIcon i {
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                    padding: 9px 15px;
+                    color: black;
+                    transition: 0.3s;
+                }
+
+                .inputWithIcon.inputIconBg i {
+                    background-color: #aaa;
+                    color: black;
+                    padding: 9px 4px;
+                    border-radius: 4px 0 0 4px;
+                }
+
+            p {
+                margin: 4px 0 3px;
+            }
+
+            #pheading {
+                font-size: 12px;
+                color: darkgray;
+            }
+
+            #pname {
+                color: black;
+            }
+
+            #box {
+                background-color: white;
+                border-radius: 15px;
+            }
+
+            #rankbox {
+                background-color: lightyellow;
+            }
+
+            #addDiv {
+                width: 58px;
+                float: right;
+                margin-top: 5px;
+                border-radius: 5px;
+                margin-right: -5px;
+                background-color: green;
+                color: white;
+            }
+
+            #upload-data {
+                margin-right: auto;
+                float: right;
+                font-size: 55px;
+                color: green;
+                width: 40px;
+                margin-top: -8px;
+            }
+        </style>
+    </head>
+    <body>
+        @{
+            List<SelectListItem> list = new List<SelectListItem>();
+        }
+        <div class="container-fluid">
+            <!-- Example split danger button -->
+            <div class="row mt-3 mb-3">
+                <div class="col-md-3 mt-2">
+                    <div class="col">
+                        @Html.DropDownListFor(Model => Model.classs, list, "Class", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-3 mt-2">
+                    <div class="col">
+                        @Html.DropDownListFor(Model => Model.section, list, "Section", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-3 mt-2">
+                    <div class="col">
+                        @Html.DropDownListFor(Model => Model.examtype, list, "Exam Type", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col mt-2" style="width:100%;">
+                    <div class="inputWithIcon">
+                        <input type="text" class="form-control col-12" id="search" placeholder="Search Students">
+                        <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            @* DETAILS STARTED *@
+            <a href="@Url.Action("AddMarks","Admin")">Add Student Marks</a>
+            @* DETAILS ENDED *@
+        </div>
+    </body>
+
+            }
+

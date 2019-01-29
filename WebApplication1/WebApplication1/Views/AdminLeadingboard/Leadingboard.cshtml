@@ -1,0 +1,100 @@
+﻿@model WebApplication1.Models.Admin.LeadingBoard
+@{
+//Layout = null;
+}
+@using (Html.BeginForm("AddTimeTable", "Admin", FormMethod.Post))
+{
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+        <link href="Content/sb-admin.css" rel="stylesheet">
+        <title>ViewTimeTAb</title>
+        <style>
+            #cntnr {
+                width: 90%;
+            }
+
+            .form-control {
+                background-color: lightgray;
+                color: black;
+                border-radius: 10px;
+            }
+
+            #addDiv {
+                width: 58px;
+                float: right;
+                margin-top: 5px;
+                border-radius: 5px;
+                margin-right: -5px;
+                background-color: green;
+                color: white;
+            }
+
+            #timetable {
+                width: inherit 250px;
+                border-radius: 20px;
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        @{
+            List<SelectListItem> list = new List<SelectListItem>();
+        }
+        <center>
+            <div class="row ml-5 mt-4">
+                <div class="container mt-4 col-md-10 col-xs-12 ">
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <div class="col">
+                                @Html.DropDownListFor(Model => Model.classs, list, "Class", new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="col">
+                                @Html.DropDownListFor(Model => Model.section, list, "Section", new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row mt-2">
+                        <div class="col-md-10">
+                            <div class="col">
+                                @Html.DropDownListFor(Model => Model.name, list, "Select Name", new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <div class="col">
+                                @Html.DropDownListFor(Model => Model.exam, list, "Select Exam", new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="col">
+                                @Html.DropDownListFor(Model => Model.rank, list, "Select Rank", new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <div class="col align-self-center">
+                                <input type="button" class="form-control" style="background-color:forestgreen; color:white;" value="Select" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </body>
+</html>
+            }

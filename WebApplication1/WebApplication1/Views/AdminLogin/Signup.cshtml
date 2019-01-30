@@ -1,0 +1,77 @@
+﻿@model Edujinni.Models.Adminsignup
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("Signup", "Home", FormMethod.Post))
+{
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <link href="Content/custom.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style type="text/css">
+        .form-control {
+            width: 200px;
+            height: 30px;
+            margin: auto;
+            margin-bottom: 10px;
+            border-radius: 20px;
+        }
+    </style>
+    <body>
+        <center>
+            <div class="container justify-content-center just" style="background-color:#FF2700; width: 500px; height: 540px; border-radius: 15px; text-align: center; margin-top:35px;">
+                <br /><br />@*#FF2700*@
+                <label style="font-size:35px;">GUEST SIGNUP</label><br><br>
+                <div class="row">
+                    <div class="col">
+                        @Html.TextBoxFor(Model => Model.first_name, new { @class = "form-control", @placeholder = "FirstName" })
+                        
+                        @Html.TextBoxFor(Model => Model.last_name, new { @class = "form-control", @placeholder = "LastName" })
+    
+                        @Html.TextBoxFor(Model => Model.mobile_no, new { @class = "form-control", @placeholder = "Mobile No" })
+
+                        @Html.TextBoxFor(Model => Model.dateof_birth, new { @type = "Date", @class = "form-control", @placeholder = "Date of Birth" })
+                      
+                        @Html.PasswordFor(Model => Model.create_pswd, new { @class = "form-control", @placeholder = "Create Password" })
+
+                        @Html.PasswordFor(Model => Model.confirm_pswd, new { @class = "form-control", @placeholder = "Confirm Password" })
+
+                        @Html.RadioButtonFor(Model => Model.gender, "Male")
+                        Male
+                        @Html.RadioButtonFor(Model => Model.gender, "FeMale")
+                        Female
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" class="form-control" name="submit" value="submit" style="border-radius:10px; background-color: black; color: white; min-width: 50px; width: 200px;">
+                    </div>
+                </div>
+            </div>
+        </center>
+    </body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/sb-admin.min.js"></script>
+
+}
+
+  @if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}  

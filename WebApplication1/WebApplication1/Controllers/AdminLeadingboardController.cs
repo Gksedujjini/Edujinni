@@ -9,11 +9,11 @@ namespace WebApplication1.Controllers
     public class AdminLeadingboardController : Controller
     {
         // GET: AdminLeadingboard
-        public ActionResult Index()
+        public ActionResult AddLeadingBoard()
         {
             return View();
         }
-        public ActionResult Leadingboard()
+        public ActionResult ViewLeadingBoard()
         {
             return View();
         }

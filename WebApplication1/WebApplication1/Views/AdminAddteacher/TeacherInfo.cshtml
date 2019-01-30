@@ -1,0 +1,212 @@
+﻿@model Edujinni.Models.TeacherModels
+@{
+// Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TeacherInfo</title>
+    <script>
+            $(document).ready(function () {
+                    $('#upload-data').click(function () {
+                        $('#getfile').trigger('click');
+                        return false;
+                    });
+
+                    $('#upload-data1').click(function () {
+                        $('#getfile1').trigger('click');
+                        return false;
+                    });
+                    $('#upload-data').mouseover(function () {
+                        $('#upload-data').css('color', 'blue');
+                    });
+                    $('#upload-data').mouseout(function () {
+                        $('#upload-data').css('color', 'black');
+                    });
+                    $('#upload-data1').mouseover(function () {
+                        $('#upload-data1').css('color', 'blue');
+                    });
+                    $('#upload-data1').mouseout(function () {
+                        $('#upload-data1').css('color', 'black');
+                    });
+                });
+    </script>
+    <style>        
+        #image1 {
+            margin-left: 15px;
+            background-color: silver;
+            width: 100px;
+            height: 100px;
+            /*text-align: right;*/
+            border-radius: 10px;
+        }
+
+        #upload-data1 {          
+            color: black;
+            margin-top: 80px;
+            margin-right: -25px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row ml-1 mt-4">
+        <h2>Generic Information</h2>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-2 ml-3  mt-4">
+            @* FOR VIEWING IMAGE *@
+           @*<img src="~/Images/test/ic_launcher.png"  class="img-responsive img-rounded"/>*@
+            <img src="" alt="User Image" id="image1" />
+            @*<center><i class="fa fa-user fa-5x" style="color:blue;"></i></center>*@
+            <i class="fa fa-plus-circle upload-data mt-4" id="upload-data1"></i>
+            <input class="" id="getfile1" style="display: none;" type="file" accept="image/*"
+                   onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])" />
+        </div>
+        <div class="col-md-3 ml-3">
+            <div class="row">
+                <div class="col">
+                    <label>First Name</label>
+                    @Html.TextBoxFor(Model => Model.FirstName, new { @class = "form-control", @id = "fn" })
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <label>Email</label>
+                    @Html.TextBoxFor(Model => Model.email, new { @class = "form-control", @id = "fn" })
+                </div>
+                </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <label>Teacher ID</label>
+                    @Html.TextBoxFor(Model => Model.teacherid, new { @class = "form-control", @id = "fn" })
+                </div>
+            </div>
+        </div>
+
+        @* SECOND COLUMN AFTER PROFILE IMAGE *@
+
+        <div class="col-md-3 ml-2">
+            <div class="row">
+                <div class="col">
+                    <label>Last Name</label>
+                    @Html.TextBoxFor(Model => Model.LastName, new { @class = "form-control", @id = "fn" })
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                <label>Phone No</label>
+                @Html.TextBoxFor(Model => Model.phone_no, new { @class = "form-control", @id = "fn" })
+            </div>
+            </div>
+        </div>
+
+        @* THIRD COLUMN AFTER PROFILE IMAGE *@
+
+        <div class="col-md-3 ml-3">
+            <div class="row">
+                <div class="col">
+                    <label>Gender</label>
+                    @Html.TextBoxFor(Model => Model.gender, new { @class = "form-control", @id = "fn" })
+                    </div>
+                </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <label>Date of Birth</label>
+                    @Html.TextBoxFor(Model => Model.dob, new { @class = "form-control", @id = "fn" })
+                </div>
+                </div>
+        </div>
+    </div>
+    <br />
+    <hr />
+    @* HERE GOES THE ACADEMIC INFORMATION *@
+    <div class="row mt-4 ml-2">
+        <h2>Academic Information</h2>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <label>Subject 1</label>
+            @Html.TextBoxFor(Model => Model.subject1, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Subject 2</label>
+            @Html.TextBoxFor(Model => Model.subject2, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Qualification</label>
+            @Html.TextBoxFor(Model => Model.qualification, new { @class = "form-control", @id = "fn" })
+        </div>
+    </div>
+
+    @* SECOND ROW OF ACADEMIC INFORMATION GOES HERE *@
+
+    <div class="row mt-4 mb-2">
+        <div class="col-md-4">
+            <label>Date of Joining</label>
+            @Html.TextBoxFor(Model => Model.dateofjoining, new { @class = "form-control", @id = "fn" })
+        </div>
+    </div>
+    <br />
+    <hr />
+
+    @* ADDRESS SECTION GOES HERE *@
+
+    <div class="row mt-4 ml-2">
+        <h2>Address</h2>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <label>Flat No</label>
+            @Html.TextBoxFor(Model => Model.flat_no, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Building Name</label>
+            @Html.TextBoxFor(Model => Model.Builing_Name, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Street-1</label>
+            @Html.TextBoxFor(Model => Model.street_1, new { @class = "form-control", @id = "fn" })
+        </div>
+    </div>
+
+    @* SECOND ROW OF ADDRESS SECTION *@
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <label>Street-2</label>
+            @Html.TextBoxFor(Model => Model.street_2, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Area</label>
+            @Html.TextBoxFor(Model => Model.area, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>City</label>
+            @Html.TextBoxFor(Model => Model.city, new { @class = "form-control", @id = "fn" })
+        </div>
+    </div>
+
+    @* THIRD ROW OF ADDRESS SECTION  *@
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <label>State</label>
+            @Html.TextBoxFor(Model => Model.state, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Code</label>
+            @Html.TextBoxFor(Model => Model.pincode, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-2 col-sm-12 col-xs-12 mt-4">
+            <button type="button" onclick="location.href='@Url.Action("TeacherEditProfileView","Admin")'" class="btn" style="width:110px; border-radius:5px; height:35px;  background-color:#5A5C59; color:white;">Edit</button>
+        </div>
+        <div class="col-md-2 col-sm-12 col-xs-12 mt-4">
+            <button type="button" class="btn btn-danger" style="width:110px; border-radius:5px; height:35px;">Delete</button>
+        </div>
+    </div>
+    <br />
+</body>
+</html>

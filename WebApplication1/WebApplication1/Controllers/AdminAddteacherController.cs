@@ -9,11 +9,19 @@ namespace WebApplication1.Controllers
     public class AdminAddteacherController : Controller
     {
         // GET: AdminAddteacher
-        public ActionResult Index()
+        public ActionResult TeacherView()
         {
             return View();
         }
-        public ActionResult Addteacher()
+        public ActionResult TeacherInfo()
+        {
+            return View();
+        }
+        public ActionResult AddTeacher()
+        {
+            return View();
+        }
+        public ActionResult TeacherEditProfileView()
         {
             return View();
         }

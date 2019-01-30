@@ -1,0 +1,25 @@
+﻿.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+}
+#rad
+{
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    background-color:white; 
+    height:70px; 
+    width:90px;
+}
+#rad1{
+    border-top-right-radius:5px; 
+    border-bottom-right-radius:5px;
+    height:70px; 
+    width:150px;
+    color:white;
+}

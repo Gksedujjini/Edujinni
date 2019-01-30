@@ -9,7 +9,7 @@ namespace WebApplication1.Controllers
     public class AdminAddmarksController : Controller
     {
         // GET: AdminAddmarks
-        public ActionResult Index()
+        public ActionResult AddResultView()
         {
             return View();
         }

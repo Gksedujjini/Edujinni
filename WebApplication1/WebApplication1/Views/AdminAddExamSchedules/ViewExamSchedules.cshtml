@@ -1,0 +1,118 @@
+﻿@model Edujinni.Models.AddExam
+@{
+//Layout = null;
+}
+@using (Html.BeginForm("AddTimeTable", "Admin", FormMethod.Post))
+{
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+        <link href="Content/sb-admin.css" rel="stylesheet">
+        <title>Exam Schedules</title>
+        <style>
+            #cntnr {
+            }
+
+            #dropdownMenuButton {
+                background-color: white;
+                border-radius: 20px;
+                width: 83%;
+            }
+
+            #dropdown1 {
+                height: 30px;
+                width: 170px;
+                background-color: lightgray;
+                color: black;
+                border-radius: 15px;
+            }
+
+            #dropdown2 {
+                height: 30px;
+                width: 170px;
+                background-color: lightgray;
+                color: black;
+                border-radius: 15px;
+                margin-right: 58px;
+            }
+
+            #upload-data {
+                margin-right: auto;
+                float: right;
+                font-size: 55px;
+                color: green;
+                width: 50px;
+                margin-top: -8px;
+            }
+
+            #addDiv {
+                width: 58px;
+                float: right;
+                margin-top: 5px;
+                border-radius: 5px;
+                margin-right: -5px;
+                background-color: green;
+                color: white;
+            }
+
+            #timetable {
+                width: inherit 250px;
+                border-radius: 20px;
+                height: 40px;
+            }
+
+            .form-control {
+                border-radius: 20px;
+                background-color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        @{
+            List<SelectListItem> list = new List<SelectListItem>();
+        }
+        <div class="row">
+            <div class="col-md ml-2 mt-2">
+                <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddExam", "Admin")'"
+                        style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;   ">
+                    <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Add Exam
+                </button>
+            </div>
+        </div>
+
+        <div class="container mt-4 col-md-12 col-xs-12" id="cntnr">
+            <div class="row mt-2">
+                <div class="col-md-4">
+                    <div class="col">
+                        @Html.DropDownListFor(Model=>Model.classs,list,"Class",new { @class="form-control"})
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col">
+                        @Html.DropDownListFor(Model => Model.section, list, "Section", new { @class = "form-control" })
+                    </div>
+                </div>               
+            </div>
+            <div class="row mt-2">
+                grid view
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="@Url.Action("AddExam", "Admin")">
+                        <i class="fa fa-plus-circle" id="upload-data"></i>
+                        <div id="addDiv"><label class="ml-2">Add</label></div>
+                    </a>
+                </div>
+                <br />
+            </div>
+        </div>
+    </body>
+</html>
+            }

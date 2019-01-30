@@ -9,7 +9,7 @@ namespace WebApplication1.Controllers
     public class AdminMessageController : Controller
     {
         // GET: AdminMessage
-        public ActionResult Index()
+        public ActionResult Messages()
         {
             return View();
         }

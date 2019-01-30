@@ -1,8 +1,10 @@
-﻿@model WebApplication1.Models.Admin.AddMarks
+﻿@model Edujinni.Models.AddMarks
 @{
-//Layout = "null";
+    //Layout = "null";
 }
-<!DOCTYPE html> 
+
+<!DOCTYPE html>
+
 <html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,43 +24,28 @@
             border-radius: 5px;
             background-color: white;
         }
-
         #colcontainer {
             background-color: #f2f2f2;
             width: 100%;
             border-radius: 10px;
         }
-
         #cntnr {
             background-color: #f2f2f2;
             border-radius: 5px;
             width: 80%;
         }
-
         #labelstd {
             font-size: 16px;
             color: gray;
         }
-
-        #prependtext {
-            height: 34px;
+        #prependtext{height:34px;}
+        #inputmarks{width:80%; border-radius: 5px 0px 0px 5px}
+        #btnsave{color:white; background-color:black; border-radius:5px;}
+        #basic-addon2{
+            width:50px;
+            height:34px;
         }
 
-        #inputmarks {
-            width: 80%;
-            border-radius: 5px 0px 0px 5px;
-        }
-
-        #btnsave {
-            color: white;
-            background-color: black;
-            border-radius: 5px;
-        }
-
-        #basic-addon2 {
-            width: 50px;
-            height: 34px;
-        }
     </style>
 </head>
 <body>
@@ -70,13 +57,13 @@
                         <div class="col-md-5 mt-2 ">
                             <div class="col justify-content-start">
                                 <label id="labelstd">Student Name</label><br />
-                                <input type="text" class="form-control" value="Sampath Kumar" />
+                                @Html.TextBoxFor(Model=>Model.StudentName, new {@class="form-control" })
                             </div>
                         </div>
                         <div class="col-md-5 mt-2">
                             <div class="col">
                                 <label id="labelstd">Student id</label><br />
-                                <input type="text" class="form-control" value="1212454" />
+                                @Html.TextBoxFor(Model => Model.StudentId, new { @class = "form-control" })
                             </div>
                         </div>
                     </div>
@@ -86,7 +73,7 @@
                         <div class="col mt-2">
                             <div class="col">
                                 <label id="labelstd">Exam Type</label><br />
-                                <input type="text" class="form-control" value="Unit Test-3" />
+                                @Html.TextBoxFor(Model => Model.ExamType, new { @class = "form-control" })
                             </div>
                         </div>
                     </center>
@@ -98,49 +85,49 @@
                                 <br />
                                 <div class="row ml-3"><b style="text-align:left; font-size: 16px; color: gray;">Marks</b></div>
                                 <div class="col mt-4 input-group" style="width:100%;">
-                                    <input type="text" class="form-control" value="Subject 1" id="inputmarks">
+                                    @Html.TextBoxFor(Model => Model.subject1, new { @class = "form-control", @id="inputmarks" })
                                     <div class="input-group-append" id="prependtext">
-                                        <span><input type="text" class="input-group-text" id="basic-addon2"></span>
+                                        @Html.TextBoxFor(Model => Model.marks1, new { @class = "input-group-text", @id = "basic-addon2" })
                                     </div>
                                 </div>
                                 <div class="col mt-4 input-group" style="width:100%;">
-                                    <input type="text" class="form-control" value="Subject 2" id="inputmarks">
+                                    @Html.TextBoxFor(Model => Model.subject2, new { @class = "form-control", @id = "inputmarks" })
                                     <div class="input-group-append" id="prependtext">
-                                        <span><input type="text" class="input-group-text" id="basic-addon2"></span>
+                                        @Html.TextBoxFor(Model => Model.marks2, new { @class = "input-group-text", @id = "basic-addon2" })
                                     </div>
                                 </div>
                                 <div class="col mt-4 input-group" style="width:100%;">
-                                    <input type="text" class="form-control" value="Subject 3" id="inputmarks">
+                                    @Html.TextBoxFor(Model => Model.subject3, new { @class = "form-control", @id = "inputmarks" })
                                     <div class="input-group-append" id="prependtext">
-                                        <span><input type="text" class="input-group-text" id="basic-addon2"></span>
+                                       @Html.TextBoxFor(Model => Model.marks3, new { @class = "input-group-text", @id = "basic-addon2" })
                                     </div>
                                 </div>
                                 <div class="col mt-4 input-group" style="width:100%;">
-                                    <input type="text" class="form-control" value="Subject 4" id="inputmarks">
+                                    @Html.TextBoxFor(Model => Model.subject4, new { @class = "form-control", @id = "inputmarks" })
                                     <div class="input-group-append" id="prependtext">
-                                        <span><input type="text" class="input-group-text" id="basic-addon2"></span>
+                                        @Html.TextBoxFor(Model => Model.marks4, new { @class = "input-group-text", @id = "basic-addon2" })
                                     </div>
                                 </div>
                                 <div class="col mt-4 input-group" style="width:100%;">
-                                    <input type="text" class="form-control" value="Subject 5" id="inputmarks">
+                                    @Html.TextBoxFor(Model => Model.subject5, new { @class = "form-control", @id = "inputmarks" })
                                     <div class="input-group-append" id="prependtext">
-                                        <span><input type="text" class="input-group-text" id="basic-addon2"></span>
+                                       @Html.TextBoxFor(Model => Model.marks5, new { @class = "input-group-text", @id = "basic-addon2" })
                                     </div>
                                 </div>
                                 <div class="col mt-4 input-group" style="width:100%;">
-                                    <input type="text" class="form-control" value="Subject 6" id="inputmarks">
+                                   @Html.TextBoxFor(Model => Model.subject6, new { @class = "form-control", @id = "inputmarks" })
                                     <div class="input-group-append" id="prependtext">
-                                        <span><input type="text" class="input-group-text" id="basic-addon2"></span>
+                                        @Html.TextBoxFor(Model => Model.marks6, new { @class = "input-group-text", @id = "basic-addon2" })
                                     </div>
                                 </div>
                                 <div class="col mt-4 input-group" style="width:100%;">
                                     <input type="button" value="Save" class="form-control" id="btnsave" />
                                 </div><br /><br />
                             </div>
-                        </center>
+                        </center>                       
                     </div>
                 </div>
-            </div>
+                </div>
         </div>
     </div>
 </body>

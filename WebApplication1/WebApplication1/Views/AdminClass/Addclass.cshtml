@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.Admin.AddClass
+﻿@model Edujinni.Models.addclass
 @{
 //   Layout = null;
 }
@@ -43,7 +43,8 @@
             @*<select id="ach">
                 </select>*@
             <br />
-            @Html.DropDownList("teacher", ViewBag.class_name as SelectList, "Select Teacher", new { @class = "form-control", @id = "achievements" })
+            //Select teacher is shown here...code exists
+            @*@Html.DropDownList("teacher", ViewBag.class_name as SelectList, "Select Teacher", new { @class = "form-control", @id = "achievements" })*@
             <br />
             @Html.TextBoxFor(Model => Model.class_name, new { @class = "form-control", @placeholder = "Enter Class Name", @id = "achievements" })
             <br />

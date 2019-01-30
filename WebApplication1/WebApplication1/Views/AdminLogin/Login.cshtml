@@ -1,0 +1,152 @@
+﻿@model Edujinni.Models.Login
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <head>
+        <style>
+    #txt1,#txt2 {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    label {
+        color: white;
+        margin-left:15px;
+        font-size:17px;
+    }
+    #btn{
+       border-radius:10px;
+       background-color: black;
+       color: white; 
+       min-width: 50px;
+    }
+    #btn1{
+        border-radius:10px;
+        background-color: #FC542B;
+        color: white;
+        min-width: 50px;
+    }
+    .design{
+        border-bottom-left-radius:20px;
+        border-bottom-right-radius:20px;
+    }
+    .updesign,.design2{
+        border-top-left-radius:20px;
+        border-top-right-radius:20px;
+    }
+    
+</style>
+        <script type="text/javascript">
+            var email = "g";
+            var pass = "g";
+            $(document).ready(function () {
+                $("#btn").click(function () {
+                    var e1= $("#txt1").val();
+                    var e2 = $("#txt2").val();
+                    if(e1==email && e2==pass)
+                    {
+                        alert("Details ok..admin clicked");
+                        $("txt1").empty();
+                    }
+                    else if(e1=="" || e2=="")
+                    {
+                        alert("Fill Details");
+                    }
+                    else {
+                        alert("Invalid Details");
+                    }
+                    if($("#admin").click(function(){}));
+                })
+            });
+        </script>
+    </head>
+<body>
+    <div class="container"><br /><br />
+        <div class="row justify-content-center mt-4">
+                <div class="col-md-2 justify-content-center updesign" style="background-color:#3766FB;">
+                    <img class="img-responsive" src="~/Images/Group 45.png" height="50" width="40" hspace="20" style="float:left; ">
+                    <h4 style="color:white; margin-top:15px;">Sign in</h4><br />
+                </div>
+                <div class="col-md-3 justify-content-center design2" style="background: linear-gradient(to left, #FF8668 0%, #F7C97C 100%);">
+                    <a href="#">
+                        <img class="img-responsive" src="~/Images/Group 48.png" height="40" width="40" hspace="20" style="float:left; margin-top:10px;">
+                        <h4 style="color:white;margin-top:15px;">Sign Up</h4>
+                    </a>
+                    @*<button type="button" style="background: linear-gradient(to left, #FF8668 0%, #F7C97C 100%);">
+                    <span><img src="~/Images/Group 48.png" height="50" width="50" hspace="20" style="float:left; margin-top:10px;" /></span>
+                </button>*@
+                </div>
+         </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 justify-content-center design" style="background-color:#3766FB;">
+                <br /><br /><br />
+                <div class="row justify-content-center">
+                    <div class="col-md-9">
+                        @Html.TextBoxFor(Model => Model.Name, new { @class = "form-control", @placeholder = "Student Id / Phone No", @id = "txt1" })
+                    </div>
+                </div>
+                <br />
+                <div class="row justify-content-center">
+                    <div class="col-md-9">
+                        @Html.PasswordFor(M => M.password, new { @class = "form-control", @placeholder = "Create Password", @id = "txt2" })
+                     </div>
+                 </div>
+                <div class="row">
+                    <div class="col-md-10 mt-2">
+                        <a href="#" style="color:white; float:right;">Forget Password</a>
+                    </div>
+                </div>
+                    <br />
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 ml-4">
+                            <input type="radio" id="admin" name="Gender" value="Admin"><span><label>Admin</label></span>
+                        </div>
+                        <div class="col-md-4 ml-4">
+                            <input type="radio" id="teacher" name="Gender" value="Teacher"><span><label>Teacher</label></span>
+                        </div>
+                    </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 ml-4">
+                        <input type="radio" id="parent" name="Gender" value="Parent"><span><label>Parent</label></span>
+                    </div>
+                    <div class="col-md-4 ml-4">
+                        <input type="radio" id="student" name="Gender" value="Student"><span><label>Student</label></span>
+                    </div>
+                </div><br />
+                    @*<div class="row justify-content-center mt-2">
+                        <div class="mr-4 ml-1">
+                            <input type="radio" id="Gender" name="Gender" value="Student"><span><label>Student</label></span>
+                        </div>
+                        <div class="ml-4">
+                            <input type="radio" id="Gender" name="Gender" value="Parent"><span><label>Parent</label></span>
+                        </div>
+                    </div><br />*@
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <input type="button" class="form-control" name="submit" value="Login" id="btn">
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <input type="button" class="form-control" name="submit" onclick="location.href='@Url.Action("Sginup", "Home")'"
+                                   value="Guest Signup" id="btn1">
+                        </div>
+                    </div><br /><br /><br />
+                </div>
+            <br /><br />          
+        </div>            
+        </div>
+</body>
+}
+

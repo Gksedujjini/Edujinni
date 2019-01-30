@@ -1,4 +1,5 @@
-﻿@model WebApplication1.Models.Admin.AddSubjects
+﻿@*@using GridMvc.Html*@
+@model Edujinni.Models.AddSubject
 @{
 // Layout = null;
 }
@@ -20,12 +21,10 @@
             background-color: #ebebe0;
             width: 70%;
         }
-
         .form-control {
-            border-radius: 20px;
-            background-color: white;
-        }
-
+                border-radius: 20px;
+                background-color: white;
+            }
         #div1 {
             background-color: white;
         }
@@ -71,7 +70,7 @@
     </style>
 </head>
 <body>
-    @{
+    @{ 
         List<SelectListItem> list = new List<SelectListItem>();
     }
     <div class="row" style="background-color:blue;">
@@ -79,7 +78,7 @@
             <i class="fa fa-user-circle fa-2x" style="color:silver; margin-bottom:5px; margin-right:10px; float:left;"></i>
             <label style="color:white; float:left; font-size:medium;">Kakatiya Educational Society</label>
             @*<input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddSubjectView","Admin")'"
-                value="Add Subject" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">*@
+                   value="Add Subject" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">*@
             <button type="button" class="btn btn-success btn-sm" onclick="location.href='@Url.Action("AddSubjectView","Admin")'" style="border-radius:5px; color: white;height:35px; min-width: 55px; width: 150px; float:right; margin-right:10px;">
                 <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left;"></span><h5 style="margin-top:3px;">Add Subject</h5>
             </button>
@@ -88,27 +87,27 @@
     <div class="container mt-5" id="cntnr">
         <div class="row mt-4">
             <div class="col-md-6">
-                @Html.DropDownListFor(Model => Model.Class, list, "Class", new { @class = "form-control" })
+                @Html.DropDownListFor(Model=>Model.Class, list , "Class", new { @class = "form-control"})
                 @*<div class="col">
-                        <select class="form-control">
-                            <option>Class</option>
-                            <option>class2</option>
-                        </select>
-                    </div>*@
+                    <select class="form-control">
+                        <option>Class</option>
+                        <option>class2</option>
+                    </select>
+                </div>*@
             </div>
             <div class="col-md-6">
-                @Html.DropDownListFor(Model => Model.Section, list, "Section", new { @class = "form-control" })
+                @Html.DropDownListFor(Model =>Model.Section,list,"Section", new { @class = "form-control"})
                 @*<div class="col">
-                        <select class="form-control">
-                            <option>Section</option>
-                            <option>class2</option>
-                        </select>
-                    </div>*@
+                    <select class="form-control">
+                        <option>Section</option>
+                        <option>class2</option>
+                    </select>
+                </div>*@
             </div>
         </div>
-        <label class="mt-2" style="">Subject List</label><br />
+        <label class="mt-4" style="font-size:17px;">Subject List</label><br />
         <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
-            <div class="col-md-6" style="background-color:white;border-radius:15px;">
+            @*<div class="col-md-6" style="background-color:white;border-radius:15px;">
                 <label style="font-size:13px;">Subject</label><br /><label>Science</label><br />
                 <label style="font-size:13px;">Type</label><br /><label>Theoretical</label>
             </div>
@@ -123,7 +122,12 @@
                         <input type="button" id="input2" class="form-control" name="submit" value="Delete">
                     </div>
                 </div>
-            </div><br />
+            </div><br />*@
+            //GRID LAYOUT CODE
+            @*@Html.Grid(Model).col(c => {
+            c.Add(m => m.Subject).Titled("SubjectName");
+            c.Add(m => m.Type).Titlled("Type");
+              });*@
         </div>
         <div class="row">
             <div class="col">

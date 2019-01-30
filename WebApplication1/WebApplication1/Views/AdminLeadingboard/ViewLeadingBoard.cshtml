@@ -1,0 +1,130 @@
+﻿@{
+//Layout = null;
+}
+@{
+//using system.data;
+//Sqlconnection com = null;
+//var db = Database.Open("test");
+//var selectedData = db.Query("SELECT * FROM Movies");
+//var grid = new WebGrid(source: selectedData);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>Leading Board</title>
+    <style>
+        #cntnr {
+            background-color: #ebebe0;
+            width: auto;
+        }
+
+        #dropdownMenuButton {
+            background-color: white;
+            border-radius: 20px;
+            width: 83%;
+        }
+
+        #div1 {
+            background-color: white;
+        }
+
+        #input1 {
+            border-radius: 10px;
+            float: right;
+            background-color: blue;
+            color: white;
+            min-width: 50px;
+            width: 100px;
+            margin-top: 5px;
+        }
+
+        #input2 {
+            border-radius: 10px;
+            float: right;
+            background-color: red;
+            color: white;
+            min-width: 50px;
+            width: 100px;
+            margin-top: 5px;
+        }
+        #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 55px;
+            color: green;
+            width: 40px;
+            margin-top: -8px;
+        }
+
+        #addDiv {
+            width: 58px;
+            float: right;
+            margin-top: 5px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    @*<div class="mt-3">
+        <a href="@Url.Action("Home-","#","Admin")"><label style="float:left;font-size:15px;">Home</label></a><span style="float:left;font-size:15px;">-Leading Board</span>
+    </div>*@
+    <div class="mt-2">
+            <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddLeadingBoard", "Admin")'"
+                    style="border-radius:5px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;">
+                <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Leading Board
+            </button>
+        <br />
+    </div>
+    <br />
+    <div class="container mt-3" id="cntnr">
+        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
+            <div class="col-md-12" style="background-color:white;border-radius:15px;">
+                @*@grid.GetHtml(
+                    columns: grid.Columns(
+                               grid.Column("Name"),
+                               grid.Column("Exam"),
+                               grid.Column("Rank")
+                           )
+                       )*@
+                @* THE CODE FOR THE RETREIVAL PURPOSE IS WRITTEN ON THE TOP IN BETWEEN { } BRACES *@
+
+                @*/////GOES SOME DATA HERE FROM THE DATABASE////*@
+                <div class="row ml-1 mr-1">
+                    <div class="col-md-12 col-sm-2 col-xs-2">
+                        // IN THIS SECTION THE DATA IS SHOWN AS GRID VIEW...THE GRID CODE IS COMMENTED AS IT RETRIEVES FROM DATABASE
+                        //HEIGHT OF THIS DIV IS AUTOMATICALLY INCREMENTED ACCORDING TO DATA
+                        @*@grid.GetHtml()*@
+                    </div>
+
+                </div>
+                <div class="mt-2 ml-1 mr-1">
+                    @* this is for space at the bottom of the table *@
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="@Url.Action("AddLeadingBoard","Admin")">
+                    <i class="fa fa-plus-circle fa-2x" id="upload-data" style=""></i>
+                    <div id="addDiv" style="width:50px;"><label class="ml-2">Add</label></div>
+                </a>
+            </div>
+            <br />
+        </div>
+    </div>
+    <br />
+</body>
+</html>

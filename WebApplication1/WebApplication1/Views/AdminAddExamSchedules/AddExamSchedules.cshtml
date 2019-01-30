@@ -1,0 +1,54 @@
+﻿@model Edujinni.Models.AddExam
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddExam</title>
+</head>
+<body>
+    @{ 
+        List<SelectListItem> list = new List<SelectListItem>();
+    }
+    <div class="row">
+        <div class="col-md-12">
+            <br /><br />
+            <div class="row mt-4">
+                <div class="col-md-offset-2 col-md-4">
+                    @Html.DropDownListFor(Model=>Model.classs,list,"Class",new { @class="form-control"})
+                </div>
+                <div class="col-md-4">
+                    @Html.DropDownListFor(Model => Model.section, list, "Section", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-offset-2 col-md-8">
+                    @Html.TextBoxFor(Model=>Model.examtype,new {@class="form-control",@placeholder="Enter Exam Type" })
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-offset-2 col-md-8">
+                    @Html.TextBoxFor(Model => Model.startdate, new {@type="date", @class = "form-control", @placeholder = "Start Date" })
+                </div>
+            </div><br />
+            <b>To</b>
+            <div class="row mt-4">
+                <div class="col-md-offset-2 col-md-8">
+                    @Html.TextBoxFor(Model => Model.enddate, new { @type = "date", @class = "form-control", @placeholder = "End Date" })
+                </div>
+            </div>
+            <center>
+                <div class="row mt-4">
+                    <div class="col-md-offset-2 col-md-8">
+                        <button type="button" class="btn btn-success" style="height:35px; width:250px; border-radius:10px;">Save</button>
+                    </div>
+                </div>
+            </center>
+        </div> 
+    </div>
+</body>
+</html>

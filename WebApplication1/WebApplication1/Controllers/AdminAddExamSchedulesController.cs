@@ -6,14 +6,14 @@ using System.Web.Mvc;
 
 namespace WebApplication1.Controllers
 {
-    public class AdminAddExamController : Controller
+    public class AdminAddExamSchedulesController : Controller
     {
-        // GET: AdminAddExam
-        public ActionResult Index()
+        // GET: AdminAddExam           
+        public ActionResult AddExamSchedules()
         {
             return View();
         }
-        public ActionResult Addexam()
+        public ActionResult ViewExamSchedules()
         {
             return View();
         }

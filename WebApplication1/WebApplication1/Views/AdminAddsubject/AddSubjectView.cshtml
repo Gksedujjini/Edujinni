@@ -1,0 +1,89 @@
+﻿@model Edujinni.Models.AddSubject
+@{
+// Layout = null;
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>AddSubjects</title>
+    <style>
+        #cntnr {
+            background-color: #ebebe0;
+            width: 50%;
+        }
+        .form-control {
+                border-radius: 20px;
+                background-color: white;
+            }
+        #inputSub {
+            background-color: white;
+            border-radius: 20px;
+        }
+        #submit {
+            border-radius: 20px;
+            background-color: #01BE66;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    @{ 
+        List<SelectListItem> list = new List<SelectListItem>();
+    }
+    <div class="container mt-5" id="cntnr">
+        <div class="row mt-3">
+            <div class="col mt-3">Add Subject</div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-5">
+                
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col align-self-center">
+                <div class="col">
+                    @Html.DropDownListFor(Model => Model.Class, list, "Select Class", new { @class = "form-control" })                 
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col align-self-center">
+                <div class="col">
+                    @Html.DropDownListFor(Model => Model.Section, list, "Select Section", new { @class = "form-control" })                   
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col align-self-center">
+                <div class="col">
+                    @Html.DropDownListFor(Model => Model.Type, list, "Select Type", new { @class = "form-control" })                  
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col align-self-center text-center">
+                <div class="col">
+                @Html.TextBoxFor(Model => Model.SubjectName, new { @class = "form-control", @id = "inputSub", @placeholder = "Input Subject Name" })
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="col align-self-center mt-2 mb-1">
+                <input type="button" class="form-control" value="Save" id="submit">
+                </div>
+            </div>
+        </div><br />
+    </div>
+    <br />
+</body>
+</html>

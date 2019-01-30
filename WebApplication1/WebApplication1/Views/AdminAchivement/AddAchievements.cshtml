@@ -2,7 +2,9 @@
 @{
 //   Layout = null;
 }
-@using (Html.BeginForm("AddAchievements", "Admin", FormMethod.Post))
+@*"AddAchievements", "Admin", FormMethod.Post*@
+
+@using (Html.BeginForm())
 {
 <!DOCTYPE html>
 <head>
@@ -56,23 +58,26 @@
      @{ 
          List<SelectListItem> list = new List<SelectListItem>();
      }
-             <p style="font-size:30px;">Add Achievements</p>
-             <br />
-                 @Html.TextBoxFor(Model => Model.AchievementDate, new {@type="date",@class = "form-control", @placeholder = "Achievement Date", @id = "achievements1" })
-                 <br />
-                    @*<p>Enter Date: <input type="text" id="date_picker" class="form-control" ></p>*@           
-                 @*@Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Select Class", @id = "achievements" })*@
-                 @Html.DropDownListFor(Model => Model.classs, list, "Select Class", new { @class = "form-control", @id = "achievements" })
-                 <br />
-                 @Html.DropDownListFor(Model => Model.section, list, "Select Section", new { @class = "form-control", @id = "achievements" })
-                 <br />
-                 @Html.DropDownListFor(Model => Model.studentlist, list, "Select Student List", new { @class = "form-control", @id = "achievements" })
-                 <br />
-                 @Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Achievement Type", @id = "achievements" })
-                 <br />
-                 <textarea name='comment' class="form-control" style="height:150px; width:260px; border-radius:20px;" placeholder="Suresh won first prize in football"></textarea>
-                 <br />
-                 <input type="button" value="Save" class="btn btn-success" style="width:260px; height:45px; border-radius:10px;" />      
-     
- </body>
+     <form action="#" method="post">
+    <p style="font-size:30px;">Add Achievements</p>
+    <br />
+    @Html.TextBoxFor(Model => Model.AchievementDate, new { @type = "date", @class = "form-control", @placeholder = "Achievement Date", @id = "achievements1" })
+    @Html.ValidationMessageFor(Model => Model.AchievementDate, "", new { @class = "text-danger" })
+    <br />
+    @*<p>Enter Date: <input type="text" id="date_picker" class="form-control" ></p>*@
+    @*@Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Select Class", @id = "achievements" })*@
+    @Html.DropDownListFor(Model => Model.classs, list, "Select Class", new { @class = "form-control", @id = "achievements" })
+    <br />
+    @Html.DropDownListFor(Model => Model.section, list, "Select Section", new { @class = "form-control", @id = "achievements" })
+    <br />
+    @Html.DropDownListFor(Model => Model.studentlist, list, "Select Student List", new { @class = "form-control", @id = "achievements" })
+    <br />
+    @Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Achievement Type", @id = "achievements" })
+    @Html.ValidationMessageFor(Model => Model.classs, "", new { @class = "text-danger" })
+    <br />
+    <textarea name='comment' class="form-control" style="height:150px; width:260px; border-radius:20px;" placeholder="Suresh won first prize in football"></textarea>
+    <br />
+    <input type="submit" value="Save" class="btn btn-success" style="width:260px; height:45px; border-radius:10px;" />
+</form>
+</body>
 }

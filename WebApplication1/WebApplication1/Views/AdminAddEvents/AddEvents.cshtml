@@ -74,22 +74,26 @@
         <div class="form-row mt-4">
             <div class="col-md-12 mt-2">
                 @Html.TextBoxFor(Model => Model.EventDate, new { @class = "form-control", @placeholder = "Select Event Date" })
+                @Html.ValidationMessageFor(Model=>Model.EventDate)
                 <span class="glyphicon glyphicon-calendar form-control-feedback mr-4"></span>
             </div>
         </div>
         <div class="form-row mt-4">
             <div class="col-md-12 mt-2">
                 @Html.TextBoxFor(Model => Model.EventName, new { @class = "form-control", @placeholder = "Enter Event Name" })
+                @Html.ValidationMessageFor(Model => Model.EventName,"", new { @class = "text-danger"})
+               
             </div>
         </div>
         <div class="form-row mt-4">
             <div class="col-md-12 mt-2">
                 @Html.TextAreaFor(Model => Model.EventDescription, new { @class = "form-control", @placeholder = "Enter Event Description" })
+                @Html.ValidationMessageFor(Model => Model.EventDescription,"", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-row mt-4">
             <div class="col-md-12 mt-2">
-                <input type="submit" name="submint" value="save" class="form-control" id="btnsave" />
+                <input type="submit" name="submit" value="save" class="form-control" id="btnsave" />
             </div>
         </div>
     </div>

@@ -86,7 +86,6 @@ D:\Edujjinni\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.Microso
 D:\Edujjinni\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 D:\Edujjinni\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
 D:\Edujjinni\WebApplication1\WebApplication1\obj\Debug\edujinni.csprojResolveAssemblyReference.cache
-C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\obj\Debug\edujinni.csprojResolveAssemblyReference.cache
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\ApplicationInsights.config
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\csc.exe
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll

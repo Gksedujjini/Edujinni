@@ -11,6 +11,7 @@ namespace Edujinni.Models
         public string LastName { get; set; }
         public string Classs { get; set; }
         public string search { get; set; }
+        public string Grade { get; set; }
         public Int64 Section { get; set; }
         public DateTime RollNO { get; set; }
         public string StudentId { get; set; }
@@ -31,5 +32,8 @@ namespace Edujinni.Models
         public string City { get; set; }
         public string State { get; set; }
         public Int32 AreaCode { get; set; }
+        public int school_id { get; set; }
+        public int class_id { get; set; }
+        public int section_id { get; set; }
     }
 }

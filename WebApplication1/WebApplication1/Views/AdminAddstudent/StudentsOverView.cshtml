@@ -112,6 +112,33 @@
             <div class="row mt-4">
                 <div class="col-md-12 ml-2" style="background-color:silver;">
                     students overview will be displayed here
+                    <table class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.StudentId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FirstName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Classs)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Section)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Grade)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*@foreach(var student in Model)
+                {
+
+                }*@
+                        </tbody>
+                    </table>
                 </div>
             </div>
     <br />

@@ -16,9 +16,16 @@
             crossorigin="anonymous"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
-    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
-    <link href="Content/sb-admin.css" rel="stylesheet">
-    <title>Edit Profile</title>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/humanity/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $.noConflict();
+        jQuery(document).ready(function ($) {
+            $("#dob").datepicker({Changemonth:true,Changeyear:true});
+        });
+    </script>
+    <title>Add Student</title>
     <script>
             $(document).ready(function () {
                     $('#upload-data').click(function () {
@@ -188,10 +195,7 @@
                                 <div class="col-md-2 mt-2">
                                     <select name="section" class="form-control" id="section" placeholder="Section" style="">
                                         <option selected="selected">--Select Section--</option>
-                                        <option>A</option>
-                                        <option>B</option>
-                                        <option>C</option>
-                                        <option>D</option>
+                                        <option>A</option>                                      
                                     </select>
                                 </div>
                             </div>
@@ -208,7 +212,8 @@
                                     @Html.TextBoxFor(Model => Model.student_id, new { @class = "form-control", @id = "stdId", @placeholder = "Student ID" })
                                 </div>
                                 <div class="col-md-4 mt-2">
-                                    @Html.TextBoxFor(Model => Model.student_roll_no, new { @type = "date", @class = "form-control", @placeholder = "Date of Birth" })
+                                    @Html.TextBoxFor(Model => Model.student_roll_no, new {@class = "form-control", @placeholder = "Date of Birth" ,@id="dob",@name="date"})
+                                    <span class="glyphicon glyphicon-calendar form-control-feedback mr-4" style="margin-right:-15px;"></span>                                   
                                 </div>
                             </div><br>
                             <hr>

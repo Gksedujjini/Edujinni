@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using System.ComponentModel.DataAnnotations;
 
 namespace Edujinni.Models
 {
     public class addclass
     {
         //public string class_name { get; set; } 
-
+        [Required(ErrorMessage ="Please Enter Class Name")]
         public string class_name { get; set; }
+        [Required(ErrorMessage ="Please Enter Section")]
         public string class_section_name { get; set; }
         public string teacher_id { get; set; }
         public object ViewBag { get;  set; }

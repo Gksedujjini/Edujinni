@@ -13,6 +13,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <link href="Content/all.min.css" rel="stylesheet" type="text/css">
     <link href="Content/sb-admin.css" rel="stylesheet">
     <title>AddSection</title>
@@ -105,10 +107,11 @@
             <h4>Section Name</h4>
             <div class="col-md-3">
                 @Html.TextBoxFor(Model => Model.SectionName, new { @class = "form-control", @placeholder = "Enter Section Name" })
+                @Html.ValidationMessageFor(Model=>Model.SectionName, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="row justify-content-around mt-4">
-            <input type="button" value="Save" class="btn btn-success" style="width:100px;" />
+            <input type="submit" value="Save" class="btn btn-success" style="width:100px;" />
         </div>
         <br />
         <br />

@@ -6,78 +6,87 @@
 
 @using (Html.BeginForm())
 {
-<!DOCTYPE html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>AddAchievements</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/ui-darkness/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-    <script>
-  $(function() {
-      $("#date_picker").datepicker();
-  });
-    </script>
-    @*<script>
-        $(document).ready(function () {
-            $("#datepicker-1").click(function ()
-            {
-                $("#datepicker-1").datepicker();
-                })
-         });
-    </script>*@
-    @*<script>
-         $(function() {
-            $( "#datepicker-1" ).datepicker();
-         });
-    </script>*@
-    <style>
-        #achievements
-        {
-            height: 40px;
-            width :260px;
-            border-radius:20px;   
-            margin-right:5px;
-        }
-           #achievements1
-        {
-            height: 40px;
-            width :260px;
-            border-radius:20px;   
-            margin-right:5px;
-        }
-        p
-        {
-            text-align:center;            
-        }
-        </style>   
+    <!DOCTYPE html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>AddAchievements</title>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/ui-darkness/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>  
+        <script>
+            $(function () {
+                $("#date_picker").datepicker();
+            });
+        </script>
+        @*<script>
+                $(document).ready(function () {
+                    $("#datepicker-1").click(function ()
+                    {
+                        $("#datepicker-1").datepicker();
+                        })
+                 });
+            </script>*@
+        @*<script>
+                 $(function() {
+                    $( "#datepicker-1" ).datepicker();
+                 });
+            </script>*@
+        <style>
+            #achievements {
+                height: 40px;
+                width: 260px;
+                border-radius: 20px;
+                margin-right: 5px;
+            }
 
-  
-</head>
- <body>     
-     @{ 
-         List<SelectListItem> list = new List<SelectListItem>();
-     }
-     <form action="#" method="post">
-    <p style="font-size:30px;">Add Achievements</p>
-    <br />
-    @Html.TextBoxFor(Model => Model.AchievementDate, new { @type = "date", @class = "form-control", @placeholder = "Achievement Date", @id = "achievements1" })
-    @Html.ValidationMessageFor(Model => Model.AchievementDate, "", new { @class = "text-danger" })
-    <br />
-    @*<p>Enter Date: <input type="text" id="date_picker" class="form-control" ></p>*@
-    @*@Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Select Class", @id = "achievements" })*@
-    @Html.DropDownListFor(Model => Model.classs, list, "Select Class", new { @class = "form-control", @id = "achievements" })
-    <br />
-    @Html.DropDownListFor(Model => Model.section, list, "Select Section", new { @class = "form-control", @id = "achievements" })
-    <br />
-    @Html.DropDownListFor(Model => Model.studentlist, list, "Select Student List", new { @class = "form-control", @id = "achievements" })
-    <br />
-    @Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Achievement Type", @id = "achievements" })
-    @Html.ValidationMessageFor(Model => Model.classs, "", new { @class = "text-danger" })
-    <br />
-    <textarea name='comment' class="form-control" style="height:150px; width:260px; border-radius:20px;" placeholder="Suresh won first prize in football"></textarea>
-    <br />
-    <input type="submit" value="Save" class="btn btn-success" style="width:260px; height:45px; border-radius:10px;" />
-</form>
-</body>
+            #achievements1 {
+                height: 40px;
+                width: 260px;
+                border-radius: 20px;
+                margin-right: 5px;
+            }
+
+            p {
+                text-align: center;
+            }
+        </style>
+
+
+    </head>
+    <body>
+        @{
+            List<SelectListItem> list = new List<SelectListItem>();
+        }
+        <form action="#" method="post">
+            <p style="font-size:30px;">Add Achievements</p>
+            <br />
+            @Html.TextBoxFor(Model => Model.AchievementDate, new { @type = "date", @class = "form-control", @placeholder = "Achievement Date", @id = "achievements1" })
+            @Html.ValidationMessageFor(Model => Model.AchievementDate, "", new { @class = "text-danger" })
+            <br />
+
+
+            @*<p>Enter Date: <input type="text" id="date_picker" class="form-control" ></p>*@
+            @*@Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Select Class", @id = "achievements" })*@
+
+
+            @Html.DropDownListFor(Model => Model.classs, list, "Select Class", new { @class = "form-control", @id = "achievements" })
+            @Html.ValidationMessageFor(Model => Model.classs, "", new { @class = "text-danger" })
+            <br />
+            @Html.DropDownListFor(Model => Model.section, list, "Select Section", new { @class = "form-control", @id = "achievements" })
+            @Html.ValidationMessageFor(Model => Model.section, "", new { @class = "text-danger" })
+            <br />
+            @Html.DropDownListFor(Model => Model.studentlist, list, "Select Student List", new { @class = "form-control", @id = "achievements" })
+            @Html.ValidationMessageFor(Model => Model.studentlist, "", new { @class = "text-danger" })
+            <br />
+            @Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Achievement Type", @id = "achievements" })
+            @Html.ValidationMessageFor(Model => Model.classs, "", new { @class = "text-danger" })
+            <br />
+            <textarea name='comment' class="form-control" style="height:150px; width:260px; border-radius:20px;" placeholder="Suresh won first prize in football"></textarea>
+            <br />
+            <input type="submit" value="Save" class="btn btn-success" style="width:260px; height:45px; border-radius:10px;" />
+        </form>
+    </body>
+            }
 }

@@ -14,6 +14,8 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>  
     <title>AddEventsView</title>
     <script>
         $(document).ready(function () {
@@ -74,7 +76,7 @@
         <div class="form-row mt-4">
             <div class="col-md-12 mt-2">
                 @Html.TextBoxFor(Model => Model.EventDate, new { @class = "form-control", @placeholder = "Select Event Date" })
-                @Html.ValidationMessageFor(Model=>Model.EventDate)
+                @Html.ValidationMessageFor(Model=>Model.EventDate, "", new { @class = "text-danger" })
                 <span class="glyphicon glyphicon-calendar form-control-feedback mr-4"></span>
             </div>
         </div>

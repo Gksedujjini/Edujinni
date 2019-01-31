@@ -23,6 +23,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/humanity/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $.noConflict();
+        jQuery(document).ready(function ($) {
+            $("#Calendar").datepicker({Changemonth:true,Changeyear:true});
+        });
+    </script>
     <!-- Custom fonts for this template-->
     <style>
         .navbar-brand {
@@ -418,6 +427,7 @@
                                         <hr />
                                         <div class="row">
                                             Events calendar is shown here
+                                            <p id="calendar"></p>
                                         </div>
                                     </div>
                                     @* 3RD ROW 2ND COL *@

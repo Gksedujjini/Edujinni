@@ -9,6 +9,16 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>AddExam</title>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/humanity/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $.noConflict();
+        jQuery(document).ready(function ($) {
+            $("#date").datepicker({ Changemonth: true, Changeyear: true });
+            $("#date1").datepicker({ Changemonth: true, Changeyear: true });
+        });
+    </script>
 </head>
 <body>
     @{ 
@@ -32,13 +42,13 @@
             </div>
             <div class="row mt-4">
                 <div class="col-md-offset-2 col-md-8">
-                    @Html.TextBoxFor(Model => Model.startdate, new {@type="date", @class = "form-control", @placeholder = "Start Date" })
+                    @Html.TextBoxFor(Model => Model.startdate, new {@class = "form-control", @placeholder = "Start Date",@id="date" })
                 </div>
             </div><br />
             <b>To</b>
             <div class="row mt-4">
                 <div class="col-md-offset-2 col-md-8">
-                    @Html.TextBoxFor(Model => Model.enddate, new { @type = "date", @class = "form-control", @placeholder = "End Date" })
+                    @Html.TextBoxFor(Model => Model.enddate, new {@class = "form-control", @placeholder = "End Date", @id = "date1" })
                 </div>
             </div>
             <center>

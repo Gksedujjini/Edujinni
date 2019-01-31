@@ -14,7 +14,17 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/humanity/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $.noConflict();
+        jQuery(document).ready(function ($) {
+            $("#date").datepicker({Changemonth:true,Changeyear:true});
+        });
+    </script>
     <title>AddEventsView</title>
+    
     <script>
         $(document).ready(function () {
             $('#upload-data1').click(function () {
@@ -73,7 +83,7 @@
         </div>
         <div class="form-row mt-4">
             <div class="col-md-12 mt-2">
-                @Html.TextBoxFor(Model => Model.EventDate, new { @class = "form-control", @placeholder = "Select Event Date" })
+                @Html.TextBoxFor(Model => Model.EventDate, new { @class = "form-control", @placeholder = "Select Event Date" ,@id="date"})
                 <span class="glyphicon glyphicon-calendar form-control-feedback mr-4"></span>
             </div>
         </div>

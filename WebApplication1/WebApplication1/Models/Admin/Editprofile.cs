@@ -11,20 +11,22 @@ namespace Edujinni.Models
     {
         public string PrincipalId { get; set; }
         public string SchoolName { get; set; }
-        [Required(ErrorMessage = "Enter Email")]
-        [RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", ErrorMessage = "Enter Proper Email Id")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Please Provide Eamil")]
+        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "Please Provide Valid Email")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Enter Mobile Number")]
+        [Required(ErrorMessage = "Please Enter Mobile Number")]
         [StringLength(10,ErrorMessage ="Invalid Mobile Number")]
         public Int64 PhoneNo { get; set; }
+        [Required(ErrorMessage ="Please Select Gender")]
         public string Gender { get; set; }
-        [Required(ErrorMessage ="Enter Flat No")]
+        [Required(ErrorMessage = "Please Enter Flat No")]
         public string FlatNO { get; set; }
+        [Required(ErrorMessage = "Please Enter Street No")]
         public string Street { get; set; }
-        [Required(ErrorMessage ="Enter Area,City,State")]
+        [Required(ErrorMessage = "Please Enter Area,City,State")]
         public string AreaCityState { get; set; }
-        [Required(ErrorMessage ="Enter PinCode")]
-        [StringLength(6,ErrorMessage ="Enter Proper PinCode")]
+        [Required(ErrorMessage = "Please Enter PinCode")]
+        [StringLength(6,MinimumLength =6,ErrorMessage ="Please Enter Proper Pincode")]
         public Int32 PinCode { get; set; }
         public string SchoolAddrFlatNO { get; set; }    
         public string SchoolAddrStreet { get; set; }
@@ -33,15 +35,13 @@ namespace Edujinni.Models
         public string SchoolAddrState { get; set; }
         public Int32 SchoolAddrePinCode { get; set; }
 
-        [Required(ErrorMessage = "Enter Password")]
+        [Required(ErrorMessage = "Please Enter Password")]
         //[Display(Name = "Password")]
         [DisplayName("Pass")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        [DisplayName("p")]
-        [Required(ErrorMessage = "Enter Confirm Password")]
+        [Required(ErrorMessage = "Please Enter Confirm Password")]
         //[Display(Name = "Confirm password")]
-        [DataType(DataType.Password)]
         [Compare("Password",ErrorMessage ="Passwords MisMatch")]
         public string ConfirmPassword { get; set; }
         

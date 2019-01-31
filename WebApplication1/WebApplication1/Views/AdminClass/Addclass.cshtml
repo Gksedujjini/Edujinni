@@ -2,16 +2,19 @@
 @{
 //   Layout = null;
 }
-@*"AddClass", "Admin", FormMethod.Post*@
-@using(Html.BeginForm())
+@using (Html.BeginForm())
 {
     <!DOCTYPE html>
     <head>
         <meta name="viewport" content="width=device-width" />
-        <title>AddClass</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+        <title>AddAchievements</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                crossorigin="anonymous"></script>
         <script src="~/Scripts/jquery.validate.js"></script>
         <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+        
         <style>
             #achievements {
                 height: 45px;
@@ -41,16 +44,13 @@
             </script>*@
     </head>
     <body>
-
-        <div id="vertical">
-            <form action="#">
+            <div id="vertical">
                 <p style="font-size:40px;">Add Class</p>
                 @*<select id="ach">
-            </select>*@
+                </select>*@
                 <br />
                 //Select teacher is shown here...code exists
                 @*@Html.DropDownList("teacher", ViewBag.class_name as SelectList, "Select Teacher", new { @class = "form-control", @id = "achievements" })*@
-                @*@Html.ValidationMessageFor(Model => Model.teacher_id, "", new { @class = "text-danger" })*@
                 <br />
                 @Html.TextBoxFor(Model => Model.class_name, new { @class = "form-control", @placeholder = "Enter Class Name", @id = "achievements" })
                 @Html.ValidationMessageFor(Model => Model.class_name, "", new { @class = "text-danger" })
@@ -59,8 +59,6 @@
                 @Html.ValidationMessageFor(Model => Model.class_section_name, "", new { @class = "text-danger" })
                 <br />
                 <input type="submit" value="Add" class="btn btn-success" id="achievements" />
-            </form>
-        </div>
-
+            </div>
     </body>
 }

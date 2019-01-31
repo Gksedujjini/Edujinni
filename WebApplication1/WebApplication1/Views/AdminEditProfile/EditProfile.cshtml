@@ -1,0 +1,321 @@
+﻿@model Edujinni.Models.Editprofile
+@{
+// Layout = null;
+}
+@*"", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" })*@
+@using (Html.BeginForm())
+{
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                crossorigin="anonymous"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>       
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript" />
+        <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
+        <link href="~/Content/sb-admin.css" rel="stylesheet">
+        <title>Edit Profile</title>
+        <script>
+            function readURL(input) {
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#imgInp").change(function () {
+                readURL(this);
+            });
+
+            $(document).ready(function () {
+                    $('#upload-data').click(function () {
+                        $('#getfile').trigger('click');
+                        return false;
+                    });
+
+                    $('#upload-data1').click(function () {
+                        $('#getfile1').trigger('click');
+                        return false;
+                    });
+                    $('#upload-data').mouseover(function () {
+                        $('#upload-data').css('color', 'blue');
+                    });
+                    $('#upload-data').mouseout(function () {
+                        $('#upload-data').css('color', 'black');
+                    });
+                    $('#upload-data1').mouseover(function () {
+                        $('#upload-data1').css('color', 'blue');
+                    });
+                    $('#upload-data1').mouseout(function () {
+                        $('#upload-data1').css('color', 'black');
+                    });
+                });
+        </script>
+        <style>
+                        /*@@media only screen and (min-width: 359px) {
+              #image {
+                max-width:220px;
+              }
+            }*/
+                        .form-control {
+                            border-radius: 20px;
+                            background-color: #f2f2f2;
+                            height: 40px;
+                        }
+                        .file-upload {
+                            display: none;
+                        }
+                        .upload-button {
+                            font-size: 1.6em;
+                        }
+                        #upload-data {
+                            font-size: 1.6em;
+                        }
+                        #upload-data1 {
+                            font-size: 1.6em;
+                        }
+                        #basic-url {
+                            background-color: blue;
+                            color: white;
+                            border-radius: 00px 20px 20px 00px;
+                        }
+                        #basic-addon3 {
+                            background-color: #b3b3b3;
+                            width: 115px;
+                            border-radius: 20px 00px 00px 20px;
+                        }
+                        #phone {
+                            border-radius: 20px;
+                            background-color: blue;
+                        }
+                        #logodiv {
+                            width: 80px;
+                            margin-top: 15px;
+                            color: red;
+                        }
+                        #upload-data {
+                            margin-right: 15px;
+                            color: black;
+                            margin-top: -10px;
+                        }
+                        #image {
+                            background-color: none;
+                            margin-top:10px;
+                            text-align: right;
+                            width: 255px;
+                            height: 100px;
+                            border-radius: 10px;
+                            margin-top: 10px;
+                        }
+                        #img1 {
+                            width: 190px;
+                            height: 100px;
+                            margin-top: 20px;
+                        }
+                        #image1 {
+                            margin-left: 25px;
+                            background-color: none;
+                            width: 130px;
+                            height: 100px;
+                            text-align: right;
+                            border-radius: 10px;
+                            margin-top: 24px;
+                        }
+                        #img2 {
+                            width: 130px;
+                            height: 100px;
+                            border-radius: 10px;
+                        }
+                        #upload-data1 {
+                            margin-right: -15px;
+                            color: black;
+                            margin-top: 112px;
+                        }
+                        #addondiv{width:270px; margin-top:10px;}
+                        #btn1 {
+                            border-radius: 20px;
+                            background-color: black;
+                            color: white;
+                        }
+                        #btn2 {
+                            border-radius: 20px;
+                            background-color: #01BE66;
+                            color: white;
+                        }
+                        #txtbox{
+                            height:47px;
+                        }
+        </style>
+        @*<script type="text/javascript">
+            $(document).ready(function () {                
+                 $(":input").attr("disabled", true);
+                $("#txtbox").attr("disabled", true);
+                if ($("btn1").click(function () {
+                     $("#txtbox").attr("disabled", false);
+                }));
+                else {
+                    $("#txtbox").attr("disabled", true);
+                }
+            });
+        </script>*@
+    </head>
+    <body>
+        <div>
+            <div class="row ml-2 mr-2">
+                <div class="col-md-12 mr-1">
+                    @*<img id="blah" alt="your image" width="100" height="100" />*@
+                    <form action="#" method="post">
+                        <div class="row mt-3">
+                            <div class="ml-3 mt-2 mr-3" id="image">
+                                <center>
+                                    <img src="" alt="School Logo" id="img1" />
+                                </center>
+                                <i class="fa fa-plus-circle upload-data" id="upload-data"></i>
+                                <input class="getfile" id="getfile" style="display: none;" type="file" accept="image/*"
+                                       onchange="document.getElementById('img1').src = window.URL.createObjectURL(this.files[0])" />
+                            </div>
+                            @*<div class="mt-2" id="image1">*@
+                            <img src="" alt="User Image" id="image1" />
+                            @*<center><i class="fa fa-user fa-5x" style="color:blue;"></i></center>*@
+                            <i class="fa fa-plus-circle upload-data" id="upload-data1"></i>
+                            <input class="" id="getfile1" style="display: none;" type="file" accept="image/*"
+                                   onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])" />
+                            @*</div>*@
+                            <div class="co ml-5" id="addondiv">
+                                <div class="row mt-2">
+                                    <div class="col-md-12 mt-3 input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon3">Principal ID</span>
+                                        </div>
+                                        @Html.TextBoxFor(Model => Model.PrincipalId, new { @class = "form-control", value = "12436576", @id = "basic-url"})
+                                    </div>
+                                </div> 
+                                <div class="row mt-4">
+                                    <div class="col-md-12 input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon3">School Name</span>
+                                        </div>
+                                        @Html.TextBoxFor(Model=>Model.SchoolName,new {@class="form-control" , @id="basic-url" ,@value = "Kakathiya School"})
+                                    </div>
+                                </div>
+                                <!--  <div class="row mt-4">
+                                  <div class="col">
+                                    <input type="" name="" class="form-control">
+                                  </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="form-row mt-5">
+                            <div class="col-md-4 mt-2">
+                                @Html.TextBoxFor(Model => Model.PhoneNo, new { @class = "form-control", @placeholder = "Phone NO" ,@id="txtbox"})
+                                @Html.ValidationMessageFor(Model => Model.PhoneNo, "", new { @class = "text-danger" ,@style="font-size:20px;" })
+                            </div>
+                            <div class="col-md-4 ml-auto mt-2 mr-1">
+                                @Html.TextBoxFor(Model => Model.Email , new { @class = "form-control", @placeholder = "Email ID", @id = "txtbox" })
+                                @Html.ValidationMessageFor(Model=>Model.Email ,"", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-3 ml-auto mt-3">
+                                <div class="form-check form-check-inline" style="margin-right:1.75rem;">
+                                    @Html.RadioButtonFor(Model => Model.Gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
+                                    <label class="form-check-label" for="inlineCheckboxMale" style="font-size:17px;">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline ml-3">
+                                    @Html.RadioButtonFor(Model => Model.Gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" })
+                                    <label class="form-check-label" for="inlineCheckboxFemale" style="font-size:17px;">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row mt-4">
+                            <div class="col-md-4 mt-2">
+                                @Html.TextBoxFor(Model => Model.FlatNO, new { @class = "form-control", @placeholder = "Flat No", @id = "txtbox" })
+                                @Html.ValidationMessageFor(Model => Model.FlatNO, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-4 ml-auto mt-2">
+                                @Html.TextBoxFor(Model => Model.Street, new { @class = "form-control", @placeholder = "Street 1", @id = "txtbox" })
+                            </div>
+                            <div class="col-md-3 ml-auto mt-2">
+                                @*@Html.TextBoxFor(Model => Model.SchoolPhoneNo, new { @class = "form-control", @placeholder = "School Phone No" })*@
+                            </div>
+                        </div>
+                        <div class="form-row mt-4">
+                            <div class="col-md-4 mt-2">
+                                @Html.TextBoxFor(Model => Model.AreaCityState, new { @class = "form-control", @placeholder = "Area, City, State", @id = "txtbox" })
+                                @Html.ValidationMessageFor(Model => Model.AreaCityState, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-4 ml-auto mt-2">
+                                @Html.TextBoxFor(Model => Model.PinCode, new { @class = "form-control", @placeholder = "Pincode", @id = "txtbox" })
+                                @Html.ValidationMessageFor(Model => Model.PinCode ,"", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-3 ml-auto mt-2">
+                                @*@html.textboxfor(model => model.schoolphoneno, new { @class = "form-control", @placeholder = "school phone no" })*@
+                            </div>
+                        </div>
+                        <div class="row mt-5 ml-2"><label style="font-size:18px;"><b>School Address</b></label></div>
+                        <div class="form-row">
+                            <div class="col-md-4 mt-2">
+                                @Html.TextBoxFor(Model => Model.SchoolAddrFlatNO, new { @class = "form-control", @placeholder = "Flat No", @id = "txtbox" })
+                            </div>
+                            <div class="col-md-4 ml-auto mt-2">
+                                @Html.TextBoxFor(Model => Model.Street, new { @class = "form-control", @placeholder = "Street 1", @id = "txtbox" })
+                            </div>
+                            <div class="col-md-3 ml-auto mt-2">
+                                @Html.TextBoxFor(Model => Model.SchoolPhoneNo, new { @class = "form-control", @placeholder = "School Phone No", @id = "txtbox" })
+                            </div>
+                        </div>
+                        <div class="form-row mt-4">
+                            <div class="col-md-4 mt-2">
+                                @Html.TextBoxFor(Model => Model.SchoolAddrAreaCity, new { @class = "form-control", @placeholder = "Area, City", @id = "txtbox" })
+                            </div>
+                            <div class="col-md-4 ml-auto mt-2">
+                                @Html.TextBoxFor(Model => Model.SchoolAddrState, new { @class = "form-control", @placeholder = "State", @id = "txtbox" })
+                            </div>
+                            <div class="col-md-3 ml-auto mt-2">
+                                @Html.TextBoxFor(Model => Model.SchoolAddrePinCode, new { @class = "form-control", @placeholder = "Pincode", @id = "txtbox" })
+                            </div>
+                        </div>
+                        <div class="row mt-5 ml-2"><label  style="font-size:18px;"><b>Change Password</b></label></div>
+                        <div class="form-row">
+                            <div class="col-md-4 mt-2">
+                                @Html.PasswordFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Type Password", @id = "txtbox" })
+                                @Html.ValidationMessageFor(Model=>Model.Password, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-4 ml-auto  mt-2">
+                                @Html.PasswordFor(Model => Model.ConfirmPassword, new { @class = "form-control", @placeholder = "Retype Password", @id = "txtbox" })
+                                @Html.ValidationMessageFor(Model => Model.ConfirmPassword ,"", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-3 ml-auto mt-2">
+                            </div>
+                            @*<div class="col-md-3 ml-auto mt-2">
+                                <input type="button" class="form-control" Value="Edit" id="btn1" style="border-radius:10px; font-size:16px; width:160px;">
+                            </div>*@
+                        </div>
+                        <div class="form-row mt-4 justify-content-center mt-2">
+                            @*<div class="col-md-4 mt-2">
+                            </div>*@
+                            <div class="col-md-2 mt-4">
+                                <input type="button" class="form-control" Value="Edit" id="btn1" style="border-radius:10px; font-size:16px; " />
+                            </div>
+                            <div class="col-md-2 mt-4 mb-1">
+                                <input type="submit" class="form-control" value="Save" id="btn2" style="border-radius:10px; font-size:16px;"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+}

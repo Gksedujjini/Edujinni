@@ -1,0 +1,158 @@
+﻿@model Edujinni.Models.StudentModel
+@{
+// Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Stundent Information</title>
+</head>
+<body>
+    <div class="row ml-1 mt-4">
+        <h2>Generic Information</h2>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-2 ml-3 mt-4">
+            @* FOR VIEWING IMAGE *@
+            <img src="~/Images/test/ic_launcher.png" class="img-responsive img-rounded" />
+        </div>
+        <div class="col-md-3 ml-3">
+            <div class="row">
+                <div class="col">
+                    <label>First Name</label>
+                    @Html.TextBoxFor(Model => Model.FirstName, new { @class = "form-control", @id = "fn" })
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <label>Class</label>
+                    @Html.TextBoxFor(Model => Model.class1, new { @class = "form-control", @id = "fn" })
+                </div>
+            </div>
+        </div>
+        @* SECOND COLUMN AFTER PROFILE IMAGE *@
+        <div class="col-md-3 ml-3">
+            <div class="row">
+                <div class="col">
+                    <label>Last Name</label>
+                    @Html.TextBoxFor(Model => Model.LastName, new { @class = "form-control", @id = "fn" })
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <label>Section</label>
+                    @Html.TextBoxFor(Model => Model.section, new { @class = "form-control", @id = "fn" })
+                </div>
+            </div>
+        </div>
+        @* THIRD COLUMN AFTER PROFILE IMAGE *@
+        <div class="col-md-3 ml-3">
+            <div class="row">
+                <div class="col">
+                    <label>Student Id</label>
+                    @Html.TextBoxFor(Model => Model.StudentId, new { @class = "form-control", @id = "fn" })
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <label>Admission Date</label>
+                    @Html.TextBoxFor(Model => Model.AdmissionDate, new { @class = "form-control", @id = "fn" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    @* HERE GOES THE ACADEMIC INFORMATION *@  
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <label>Gender</label>
+            @Html.TextBoxFor(Model => Model.Gender, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Phone No</label>
+            @Html.TextBoxFor(Model => Model.mobile, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Date of Birth</label>
+            @Html.TextBoxFor(Model => Model.Dob, new { @class = "form-control", @id = "fn" })
+        </div>
+    </div>
+    @* SECOND ROW OF ACADEMIC INFORMATION GOES HERE *@
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <label>Grade</label>
+            @Html.TextBoxFor(Model => Model.grade, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Attendance</label>
+            @Html.TextBoxFor(Model => Model.attendance, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Marks Percentage</label>
+            @Html.TextBoxFor(Model => Model.marks, new { @class = "form-control", @id = "fn" })
+        </div>
+    </div>
+    @* THIRD ROW *@
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <label>Parent Name</label>
+           @Html.TextBoxFor(Model => Model.FatherName, new { @class = "form-control" })
+        </div>
+    </div>
+    <br />
+    @* ADDRESS SECTION GOES HERE *@
+    @*<div class="row mt-4 ml-2">
+        <h2>Address</h2>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <label>Flat No</label>
+            @Html.TextBoxFor(Model => Model.FlatNo, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Building Name</label>
+            @Html.TextBoxFor(Model => Model.BulidingName, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Street-1</label>
+            @Html.TextBoxFor(Model => Model.street1, new { @class = "form-control", @id = "fn" })
+        </div>
+    </div>
+    @* SECOND ROW OF ADDRESS SECTION *@
+    @*<div class="row mt-4">
+        <div class="col-md-4">
+            <label>Street-2</label>
+            @Html.TextBoxFor(Model => Model.street2, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>Area</label>
+            @Html.TextBoxFor(Model => Model.Area, new { @class = "form-control", @id = "fn" })
+        </div>
+        <div class="col-md-4">
+            <label>City</label>
+            @Html.TextBoxFor(Model => Model.City, new { @class = "form-control", @id = "fn" })
+        </div>
+    </div>*@
+    @* THIRD ROW OF ADDRESS SECTION  *@
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <label>Achievements</label>
+            @Html.TextAreaFor(Model => Model.Achievements, new { @class = "form-control" })
+        </div>
+        <div class="col-md-6">
+            <label>Address</label>
+            @Html.TextAreaFor(Model => Model.Address, new { @class = "form-control", @id = "fn" })
+        </div>    
+        </div>
+    <div class="row mt-4">   
+        <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
+            <button type="button" onclick="location.href='@Url.Action("EditStudentOverView","Admin")'" class="btn" style="width:200px; border-radius:5px; height:35px;  background-color:#5A5C59; color:white;">Edit</button>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
+            <button type="button" class="btn btn-danger" style="width:200px; border-radius:5px; height:35px;">Delete</button>
+        </div>
+    </div>
+    <br />
+</body>
+</html>

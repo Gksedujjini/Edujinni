@@ -9,11 +9,11 @@ namespace WebApplication1.Controllers
     public class AdminAddResultController : Controller
     {
         // GET: AdminAddResult
-        public ActionResult Index()
+        public ActionResult ViewResult()
         {
             return View();
         }
-        public ActionResult Addresult()
+        public ActionResult AddResult()
         {
             return View();
         }

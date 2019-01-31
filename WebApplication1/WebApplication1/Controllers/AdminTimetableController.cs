@@ -9,11 +9,11 @@ namespace WebApplication1.Controllers
     public class AdminTimetableController : Controller
     {
         // GET: AdminTimetable
-        public ActionResult Index()
+        public ActionResult AddTimeTable()
         {
             return View();
         }
-        public ActionResult Timetable()
+        public ActionResult ViewTimeTable()
         {
             return View();
         }

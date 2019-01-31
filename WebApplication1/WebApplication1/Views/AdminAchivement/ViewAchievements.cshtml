@@ -1,0 +1,123 @@
+﻿
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>ViewAchievements</title>
+    <style>
+        #cntnr {
+            background-color: #ebebe0;
+            width: 95%;
+        }
+
+        #dropdownMenuButton {
+            background-color: white;
+            border-radius: 20px;
+            width: 83%;
+        }
+
+        #div1 {
+            background-color: white;
+        }
+
+        #input1 {
+            border-radius: 10px;
+            float: right;
+            background-color: blue;
+            color: white;
+            min-width: 50px;
+            width: 100px;
+            margin-top: 5px;
+        }
+
+        #input2 {
+            border-radius: 10px;
+            float: right;
+            background-color: red;
+            color: white;
+            min-width: 50px;
+            width: 100px;
+            margin-top: 5px;
+        }
+
+        #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 55px;
+            color: green;
+            width: 50px;
+            margin-top: -8px;
+        }
+
+        #addDiv {
+            width: 58px;
+            float: right;
+            margin-top: 5px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="row" style="background-color:blue;">
+        <div class="col-md-12 ml-2 mt-2 mb-2">
+            <i class="fa fa-user-circle fa-2x" style="color:silver; margin-bottom:5px; margin-right:10px; float:left;"></i>
+            <label style="color:white; float:left; font-size:medium;">Kakatiya Educational Society</label>
+            @*<input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddAchievements","Admin")'"
+                   value="Add Achievements" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">*@
+            <button type="button" class="btn btn-success btn-sm" onclick="location.href='@Url.Action("AddAchievements","Admin")'" style="border-radius:5px; color: white;height:35px; min-width: 60px; width: 160px; float:right; margin-right:10px;">
+                <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-2px;"></span><h5 style="margin-top:3px;">&nbsp;Add Achievements</h5>
+            </button>
+        </div>
+    </div>
+    <div class="container mt-4" id="cntnr">
+        
+        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
+            <div class="col-md-6" style="background-color:white;border-radius:15px;">
+                <label style="font-size:13px;">Activity Name</label><br /><label>Date</label><br />
+                <label style="font-size:13px;">Student Name</label><br /><label>Class</label><br />
+                <label>Section</label><br />
+            </div>
+                <div class="col-md-5 mt-1" id="div1">
+                    <div class="row">
+                        <div class="col ml-2">
+                            <input type="button" class="form-control" id="input1" name="submit" value="Edit" onclick="location.href='@Url.Action("AddAchievements","Admin")'">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col ml-2 mb-2">
+                            <input type="button" id="input2" class="form-control" name="submit" value="Delete"  onclick="location.href='@Url.Action("AddAchievements","Admin")'">
+                        </div>
+                    </div>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="@Url.Action("AddAchievements","Admin")">
+                    <i class="fa fa-plus-circle" id="upload-data"></i>
+                    <div id="addDiv"><label class="ml-2">Add</label></div>
+                </a>
+            </div>
+            <br />
+        </div>
+    </div>
+    <br />
+</body>
+</html>

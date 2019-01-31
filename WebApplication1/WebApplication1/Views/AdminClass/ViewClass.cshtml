@@ -1,0 +1,170 @@
+﻿@model Edujinni.Models.addclass
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>AddSubjects</title>
+    <style>
+        #cntnr {
+            background-color: #ebebe0;
+            width: 95%;
+        }
+
+        #dropdownMenuButton {
+            background-color: white;
+            border-radius: 20px;
+            width: 83%;
+        }
+
+        #div1 {
+            background-color: white;
+        }
+
+        #input1 {
+            border-radius: 10px;
+            float: right;
+            background-color: blue;
+            color: white;
+            min-width: 50px;
+            width: 100px;
+            margin-top: 5px;
+        }
+
+        #input2 {
+            border-radius: 10px;
+            float: right;
+            background-color: red;
+            color: white;
+            min-width: 50px;
+            width: 100px;
+            margin-top: 5px;
+        }
+
+        #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 55px;
+            color: green;
+            width: 50px;
+            margin-top: -8px;
+        }
+
+        #addDiv {
+            width: 58px;
+            float: right;
+            margin-top: 5px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {    
+  text-align: center;
+  
+}
+</style>
+</head>
+<body>
+    <div class="row" style="background-color:blue;">
+        <div class="col-md ml-2 mt-2 mb-2">
+            <i class="fa fa-user-circle fa-2x" style="color:silver;"></i>
+            <label style="color:white;">Kakatiya Educational Society</label>
+            <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddSection", "Admin")'"
+                    style="border-radius:5px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;">
+                <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Add Section
+            </button>
+        </div>
+    </div>
+    <div class="container mt-4" id="cntnr">
+        <br />
+        @{
+            List<SelectListItem> list = new List<SelectListItem>();
+        }
+        <div class="col-md-6">
+            @Html.DropDownListFor(Model => Model.class_name, list,"Class", new { @class = "form-control" })
+        </div>
+        <br />   
+        <br />     
+        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">   
+            //DATA IS SHOWN IN GRID VIEW      
+            @*<div class="col-md-6" style="background-color:white;border-radius:15px;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>
+                                Class
+                            </th>
+                            <td>class -4</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Sections
+                            </th>
+                            <th>
+                                Allocated Teacher
+                            </th>
+                        </tr>
+                        <tr>
+                        <td>
+                            Section-A
+                        </td>
+                        <td>
+                            Andrea
+                        </td>                   
+                    </tr>  
+                        <tr>
+                            <td>
+                                Section-B
+                            </td>
+                            <td>
+                                Philippi
+                            </td>
+                        </tr>  
+                    </tbody>
+                </table> 
+            </div>*@
+            @*<div class="col-md-5 mt-1" id="div1">
+                <div class="row">
+                    <div class="col ml-2">
+                        <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col ml-2 mb-2">
+                        <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
+                    </div>
+                </div>
+            </div>*@
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <a href="@Url.Action("AddSection","Admin")">
+                    <i class="fa fa-plus-circle" id="upload-data"></i>
+                    <div id="addDiv"><label class="ml-2">Add</label></div>
+                </a>
+            </div>
+            <br />
+        </div>
+    </div><br />
+</body>
+</html>

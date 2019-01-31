@@ -9,7 +9,7 @@ namespace WebApplication1.Controllers
     public class AdminAttendanceController : Controller
     {
         // GET: AdminAttendance
-        public ActionResult Index()
+        public ActionResult ViewAttendance()
         {
             return View();
         }

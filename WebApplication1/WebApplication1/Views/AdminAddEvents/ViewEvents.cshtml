@@ -1,0 +1,142 @@
+﻿@model Edujinni.Models.EventsModel
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>ViewEvents</title>
+    <style>
+        #cntrn {
+            margin-left: auto;
+        }
+        #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 50px;
+            color: green;
+            width: 50px;
+            margin-top: -8px;
+        }
+        #addDiv {
+            width: 58px;
+            height:25px;
+            float: right;
+            margin-top: 5px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+        #image1 {
+            margin-left: 10px;
+            background-color: white;
+            width: 130px;
+            height: 100px;
+            text-align: right;
+            border-radius: 10px;
+        }
+        #imguser {
+            color: blue;
+            margin-top: 15px;
+        }
+        #ename{ color: grey; font-size:12px;}
+        #evtcontent{ text-align:left; font-size:13px;}
+        #editbtn{ border-radius:20px; width:100px;}
+        #divlast{margin-right:135px;}
+    </style>
+</head>
+   <body>
+        <div class="row ml-0 mr-2 mt-3">
+            <div class="col-md-8 col-md-offset-2 mr-1 mb-3" style="background-color: #f2f2f2; width:70%; border-radius:10px;">
+                <div class="row mt-3">
+                    <div class="mt-2" id="image1">
+                        <center><i class="fa fa-user fa-5x" id="imguser"></i></center>
+                    </div>
+                    <div class="col ml-4">
+                        <div class="row ">
+                            <div class="col-md-12 text-left mt-4">
+                                <label id="ename">Event Date</label><br /><label id="edate"></label>
+                            </div>
+                        </div> <div class="row mt-3">
+                            <div class="col-md-12 text-left">
+                                <label id="ename">Event Name</label><br /><label id="edate"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4 ml-1">
+                    <label id="ename">Event Description</label><br />
+                    <label id="evtcontent"></label>
+                </div>
+                <div class="row mt-3 ml-1 mb-3">
+                    <div class="col align-se">
+                        
+                    </div>
+                    <div class="col align-self-end">
+                        <input class="btn btn-success" type="submit" name="submit" value="Edit" id="editbtn" />
+                    </div>
+                    <div class="col align-self-center">
+                        <input type="submit" class="btn btn-danger" name="submit" value="Delete" id="editbtn" />
+                    </div>
+                </div>
+             </div>
+            <div class="col-md-8 col-md-offset-2 mr-1 mb-3 mt-3" style="background-color: #f2f2f2; width:70%; border-radius:10px;">
+                <div class="row mt-3">
+                    <div class="mt-2" id="image1">
+                        <center><i class="fa fa-user fa-5x" id="imguser"></i></center>
+                    </div>
+                    <div class="col ml-4">
+                        <div class="row ">
+                            <div class="col-md-12 text-left mt-4">
+                                <label id="ename">Event Date</label><br /><label id="edate"></label>
+                            </div>
+                        </div> <div class="row mt-3">
+                            <div class="col-md-12 text-left">
+                                <label id="ename">Event Name</label><br /><label id="edate"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4 ml-1">
+                    <label id="ename">Event Description</label><br />
+                    <label id="evtcontent">
+                        
+                    </label>
+                </div>
+                <div class="row mt-3 ml-1 mb-3">
+                    <div class="col align-se">
+
+                    </div>
+                    <div class="col align-self-end">
+                        <input class="btn btn-success" type="submit" name="submit" value="Edit" id="editbtn" />
+                    </div>
+                    <div class="col align-self-center">
+                        <input type="submit" class="btn btn-danger" name="submit" value="Delete" id="editbtn" />
+                    </div>
+                </div>
+               
+            </div>
+            
+         </div>
+    <div class="row mt-4">
+        <div class="col" id="divlast">
+            <a href="@Url.Action("AddEventsView","Events")">
+                <i class="fa fa-plus-circle" id="upload-data"></i>
+
+                <div id="addDiv"><label class="ml-2 mt-2">Add</label></div>
+            </a>
+        </div>
+        <br />
+    </div>
+</body>
+</html>

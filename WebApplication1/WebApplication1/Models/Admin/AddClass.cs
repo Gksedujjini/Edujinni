@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using System.ComponentModel.DataAnnotations;
 
 namespace Edujinni.Models
 {
@@ -17,6 +18,7 @@ namespace Edujinni.Models
 
         public string class_name { get; set; }
         public string class_section_name { get; set; }
+        [Required(ErrorMessage ="Please Select TeacherName")]
         public string teacher_id { get; set; }
         public object ViewBag { get;  set; }
 

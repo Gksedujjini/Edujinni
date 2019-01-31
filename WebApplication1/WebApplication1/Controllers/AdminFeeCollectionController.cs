@@ -9,7 +9,7 @@ namespace WebApplication1.Controllers
     public class AdminFeeCollectionController : Controller
     {
         // GET: AdminFeeCollection
-        public ActionResult Index()
+        public ActionResult FeeCollection()
         {
             return View();
         }

@@ -9,10 +9,6 @@ namespace WebApplication1.Controllers
     public class AdminAddEventsController : Controller
     {
         // GET: AdminAddEvents
-        public ActionResult Index()
-        {
-            return View();
-        }
         public ActionResult ViewEvents()
         {
             return View();

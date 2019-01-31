@@ -9,7 +9,7 @@ namespace WebApplication1.Controllers
     public class AdminRequestedController : Controller
     {
         // GET: AdminRequested
-        public ActionResult Index()
+        public ActionResult RequestedPage()
         {
             return View();
         }

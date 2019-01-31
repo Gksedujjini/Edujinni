@@ -1,0 +1,33 @@
+﻿
+<!-- Custom fonts for this template-->
+        .navbar-brand {
+            color: white;
+            font-size: 1.5rem;
+            height: 40px;
+            margin-top: 5px;
+        }
+
+        .img {
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+   
+        /*CSS CODE FOR MAIN PAGE FIRST ROW TO DISPLAY STUDENTS ,PARENTS AND ALL INFO*/
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px; /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }

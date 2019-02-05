@@ -136,13 +136,5 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-        public ActionResult EditStudent()
-        {
-            return View();
-        }
-        //public ActionResult StudentsOverView()
-        //{
-        //    return View();
-        //}
     }
 }

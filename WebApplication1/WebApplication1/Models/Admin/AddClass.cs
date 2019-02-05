@@ -19,6 +19,7 @@ namespace Edujinni.Models
         public string class_name { get; set; }
         [Required(ErrorMessage ="Please Enter Section")]
         public string class_section_name { get; set; }
+        [Required(ErrorMessage ="Please Select TeacherName")]
         public string teacher_id { get; set; }
         public object ViewBag { get;  set; }
 

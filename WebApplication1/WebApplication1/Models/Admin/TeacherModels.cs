@@ -38,6 +38,7 @@ namespace Edujinni.Models
         public string teacher_buildingname { get; set; }
         public string teacher_street1 { get; set; }
         public string teacher_status { get; set; }
+        public string teacher_fullname { get; set; }
     }
     //public class TeacherModels
     //{

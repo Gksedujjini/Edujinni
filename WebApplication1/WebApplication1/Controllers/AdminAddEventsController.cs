@@ -43,9 +43,18 @@ namespace WebApplication1.Controllers
         {
             return View("AddEvents");
         }
-        public ActionResult AddEvents()
+        [HttpPut]
+        public ActionResult AddEvents(EventsModel updatedetails)
         {
-            return View();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://www.edujinni.in/updatingEvents");
+                var upd = client.PostAsJsonAsync<EventsModel>("updatingEvents",updatedetails);
+                updatedetails.school_id = 1;
+                upd.Wait();
+                //var result = 
+            }
+                return View("ViewEvents");
         }
         [HttpPost]
         public ActionResult AddEvents(EventsModel model)

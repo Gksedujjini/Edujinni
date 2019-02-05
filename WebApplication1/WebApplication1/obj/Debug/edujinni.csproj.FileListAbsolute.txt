@@ -260,7 +260,6 @@ E:\New folder\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.Twitte
 E:\New folder\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\New folder\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 E:\New folder\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\ApplicationInsights.config
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\csc.exe
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -269,6 +268,7 @@ C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bi
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\vbc.exe
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\roslyn\VBCSCompiler.exe

@@ -12,58 +12,40 @@ namespace Edujinni.Models
     {
         //[Required(ErrorMessage = "Please Enter StudentId")]
         public int student_id { get; set; }
-        [Required(ErrorMessage = "Image is mandatory")]
         public byte[] student_image { get; set; }
         [Required(ErrorMessage = "Please Select Student Section")]
         public string student_section { get; set; }
-        [Required(ErrorMessage = "Enter First Name")]
+        [Required(ErrorMessage ="Enter First Name")]
         [StringLength(1)]
         public string student_first_name { get; set; }
-        [Required(ErrorMessage = "Enter Last Name")]
-        [StringLength(1)]
+        [Required(ErrorMessage = "Please Enter Last Name")]
         public string student_last_name { get; set; }
         [Required(ErrorMessage = "Please Enter Rollno")]
         public string student_roll_no { get; set; }
         [Required(ErrorMessage = "Please Enter ChaildNumber")]
         public int student_chiled_no { get; set; }
-        [Required(ErrorMessage = "Please Select DateOfBirth")]
         public DateTime student_dob { get; set; }
-        [Required(ErrorMessage = "Please Select Gender")]
         public string student_gender { get; set; }
-        [Required(ErrorMessage = "Enter Father Name")]
-        [StringLength(5)]
+        [Required(ErrorMessage = "Please Enter Father Name")]
         public string student_father_name { get; set; }
-        [Required(ErrorMessage = "Enter Father MobileNumber")]
-        [StringLength(maximumLength: 10, MinimumLength = 10)]
         public string student_father_mobile_no { get; set; }
         [Required(ErrorMessage = "Please Enter Father Occupation")]
         public string student_father_occupation { get; set; }
-        [Required(ErrorMessage = "Enter Mother Name")]
-        [StringLength(1)]
         public string student_mother_name { get; set; }
-        [Required(ErrorMessage = "Enter Mother MobileNumber")]
-        [StringLength(maximumLength: 10, MinimumLength = 10)]
         public string student_mother_mobile_no { get; set; }
         [Required(ErrorMessage = "Please Enter Mother Occupation")]
         public string student_mother_occupation { get; set; }
         [Required(ErrorMessage = "Please Enter No of Siblings")]
         public int student_no_of_siblings { get; set; }
-        [Required(ErrorMessage = "Please Enter FlatNo ")]
         public string student_flat_no { get; set; }
         [Required(ErrorMessage = "Please Enter BulindingName ")]
         public string student_buliding_name { get; set; }
-        [Required(ErrorMessage = "Please Enter Street")]
         public string student_street { get; set; }
         [Required(ErrorMessage = "Please Enter Street1")]
         public string student_street1 { get; set; }
-        [Required(ErrorMessage ="Please Enter Area")]
         public string student_area { get; set; }
-        [Required(ErrorMessage = "Please Enter City")]
         public string student_city { get; set; }
-        [Required(ErrorMessage = "Please Enter State")]
         public string student_state { get; set; }
-        [Required(ErrorMessage = "Please Enter Pincode")]
-        [StringLength(6)]
         public int student_pincode { get; set; }
         
         public string insert_by { get; set; }
@@ -75,19 +57,12 @@ namespace Edujinni.Models
         public string Student_status { get; set; }
         [Required(ErrorMessage ="Please Select Student Class")]
         public string student_class { get; set; }
-
-        //public void GETCLASS()
-        //{
-        //    HttpClient client = new HttpClient();
-        //    client.BaseAddress = new Uri("http://www.edujinni.in/");
-        //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //    client.DefaultRequestHeaders.Accept.Clear();
-        //    HttpResponseMessage response = client.GetAsync("classNames/classDetailsList").Result;  // Blocking call!    
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        var classnames = response.Content.ReadAsStringAsync().Result;
-        //    }
-        //}
+        public int class_id { get; set; }
+        public string class_name { get; set; }
+        public string section_name { get; set; }
+        public int section_id { get; set; }
+        public string studentName { get; set; }
+  
     }
 
 }

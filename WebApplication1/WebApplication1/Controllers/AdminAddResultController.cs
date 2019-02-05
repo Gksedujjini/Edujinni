@@ -17,5 +17,9 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+        public ActionResult StudentResult()
+        {
+            return View();
+        }
     }
 }

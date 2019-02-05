@@ -1,8 +1,8 @@
 ﻿@model Edujinni.Models.EventsModel
 @{
-    //Layout = null;
+//Layout = null;
 }
-
+@using (Html.BeginForm("AddEvents", "AdminAddEvents", FormMethod.Post)) { 
 <!DOCTYPE html>
 
 <html>
@@ -14,9 +14,22 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/humanity/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>  
+    <script>
+        $.noConflict();
+        jQuery(document).ready(function ($) {
+            $("#date").datepicker({Changemonth:true,Changeyear:true});
+        });
+    </script>
     <title>AddEventsView</title>
+    
     <script>
         $(document).ready(function () {
             $('#upload-data1').click(function () {
@@ -75,27 +88,26 @@
         </div>
         <div class="form-row mt-4">
             <div class="col-md-12 mt-2">
-                @Html.TextBoxFor(Model => Model.EventDate, new { @class = "form-control", @placeholder = "Select Event Date" })
-                @Html.ValidationMessageFor(Model=>Model.EventDate, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(Model => Model.event_date, new { @class = "form-control", @placeholder = "Select Event Date" ,@id="date"})
+                @Html.ValidationMessageFor(Model=>Model.event_date,"",new {@class="text-danger"})
                 <span class="glyphicon glyphicon-calendar form-control-feedback mr-4"></span>
             </div>
         </div>
         <div class="form-row mt-4">
             <div class="col-md-12 mt-2">
-                @Html.TextBoxFor(Model => Model.EventName, new { @class = "form-control", @placeholder = "Enter Event Name" })
-                @Html.ValidationMessageFor(Model => Model.EventName,"", new { @class = "text-danger"})
-               
+                @Html.TextBoxFor(Model => Model.event_name, new { @class = "form-control", @placeholder = "Enter Event Name" })
+                @Html.ValidationMessageFor(Model=>Model.event_name,"",new { @class= "text-danger"})
             </div>
         </div>
         <div class="form-row mt-4">
             <div class="col-md-12 mt-2">
-                @Html.TextAreaFor(Model => Model.EventDescription, new { @class = "form-control", @placeholder = "Enter Event Description" })
-                @Html.ValidationMessageFor(Model => Model.EventDescription,"", new { @class = "text-danger" })
+                @Html.TextAreaFor(Model => Model.event_description, new { @class = "form-control", @placeholder = "Enter Event Description" })
+                @Html.ValidationMessageFor(Model=>Model.event_description,"",new { @class = "text-danger"})
             </div>
         </div>
         <div class="form-row mt-4">
             <div class="col-md-12 mt-2">
-                <input type="submit" name="submit" value="save" class="form-control" id="btnsave" />
+                <input type="submit" name="submint" value="save" class="form-control" id="btnsave" />
             </div>
         </div>
     </div>
@@ -105,3 +117,4 @@
     </div>
 </body>
 </html>
+}

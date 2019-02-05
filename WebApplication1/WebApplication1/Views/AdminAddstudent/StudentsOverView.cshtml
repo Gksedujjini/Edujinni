@@ -2,12 +2,10 @@
 @{
 // Layout = null;
 }
-@using (Html.BeginForm("StudentOverView", "Home", FormMethod.Post))
+@using (Html.BeginForm("StudentOverView","AdminAddstudent",FormMethod.Post))
 {
-
-    <!DOCTYPE html>
-
-    <head>
+        <!DOCTYPE html>
+        <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,8 +21,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="Content/all.min.css" rel="stylesheet" type="text/css">
-        <link href="Content/sb-admin.css" rel="stylesheet">
+        <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
+        <link href="~/Content/sb-admin.css" rel="stylesheet">
         <title>Student Overview</title>
         <style>
             .form-control {
@@ -85,16 +83,17 @@
             background-color: green;
             color: white;
         }
-
+        th{text-align:center;}
         </style>
     </head>
     <body>
         @{ 
             List<SelectListItem> list = new List<SelectListItem>();
-        }
+            //list.Add(ViewBag.classnames);
+                        }
         <div class="row">
             <div class="col-md ml-2 mt-2">
-                <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddStudent", "Admin")'"
+                <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddStudent", "AdminAddstudent")'"
                         style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;   ">
                     <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Add Student
                 </button>
@@ -103,21 +102,105 @@
         <div class="container-fluid">
     <div class="row mt-4">
         <div class="col-md-6">
-            @Html.DropDownListFor(Model => Model.Classs, list, "Class", new { @class = "form-control" })
+            @*@Html.DropDownListFor(Model => Model.class_name,list, "Class", new { @class = "form-control" })*@
+            <select id="sltCustomers" name="sltCustomers" class="form-control">
+                @foreach (var item in ViewBag.classnames)
+                {
+                    <option>@item.class_name</option>
+                }
+            </select>
        </div>
         <div class="col-md-6">
-            @Html.DropDownListFor(Model => Model.Section, list, "Section", new { @class = "form-control" })
+            @*@Html.DropDownListFor(Model => Model.section_name, list, "Section", new { @class = "form-control" })*@
+            <select id="sltCustomers" name="sltCustomers" class="form-control">
+                @foreach (var item in ViewBag.sections)
+                {
+                    <option>@item.section_name</option>
+                }
+            </select>
         </div>
     </div>
             <div class="row mt-4">
                 <div class="col-md-12 ml-2" style="background-color:silver;">
                     students overview will be displayed here
+                    <table class="table table-striped table-responsive" id="studentslist">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.student_id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.student_first_name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.class_name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.section_name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.student_grade)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var student in ViewBag.allstudents)
+                                {
+                                <tr>
+                                    <td  align="center">
+                                        @student.student_id
+                                    </td>
+                                    <td align="center">
+                                        @student.studentName
+                                    </td>
+                                    <td align="center">
+                                        @*@student.student_father_name*@
+                                    </td>
+                                    <td align="center">
+                                        @*@student.section_name*@
+                                    </td>
+                                    <td align="center">
+                                        @student.student_grade
+                                    </td>
+                                </tr>
+                                }
+                        </tbody>
+                    </table>
+                    @*<script>
+                        $(document).ready(function () {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "http://www.edujinni.in/studentsList",
+                                    data: JSON.stringify({ school_id: 1 }),
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    success: function (data) {
+                                        $("#studentslist").html('');
+                                        var studentslist = '';
+                                        $.each(data, function (i, items) {
+                                            var tdata = "<tr>"
+                                            + "<td>" + items.student_id + "</td>"
+                                            + "<td>" + items.student_first_name + "</td>"
+                                            + "<td>" + items.student_section + "</td>" + "<tr>";
+                                            $('#studentslist').append(rows);
+                                        });
+                                        console.log(data);
+                                    },
+                                    failure: function (data) {
+                                        alert(data.responseText);
+                                    }, //End of AJAX failure function  
+                                    error: function (data) {
+                                        alert(data.responseText);
+                                    } //End of AJAX error function  
+                                });
+                        });
+                    </script>*@
                 </div>
             </div>
     <br />
     @* FOR TESTING PURPOSE  *@
     <div class="row">
-        @Html.ActionLink("Student Details", "StudentInfo", "Admin")
+        @Html.ActionLink("Student Details", "StudentInfo", "AdminAddstudent")
     </div>
             <div class="row">
                 <div class="col">

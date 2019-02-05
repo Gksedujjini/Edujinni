@@ -10,8 +10,6 @@ namespace Edujinni.Models
 {
     public class Addteacher
     {
-
-        [Required(ErrorMessage = "Please Enter TeacherId")]
         public int teacher_id { get; set; }
         [Required(ErrorMessage ="Please Select Profile Image")]
         public byte[] teacher_image { get; set; }

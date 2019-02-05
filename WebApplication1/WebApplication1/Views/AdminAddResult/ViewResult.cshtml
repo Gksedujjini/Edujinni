@@ -112,7 +112,7 @@
             List<SelectListItem> list = new List<SelectListItem>();
         }
         <div class="mt-2">
-            <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddResultView", "Admin")'"
+            <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddMarks", "AdminAddmarks")'"
                     style="border-radius:5px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;">
                 <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Add Marks
             </button>
@@ -185,11 +185,11 @@
                 </div>
             </div>
                     <div class="row">
-                        <a href="@Url.Action("StudentResult","Admin")">Student Result</a>
+                        <a href="@Url.Action("StudentResult", "AdminAddResult")">Student Result</a>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <a href="@Url.Action("AddResultView","Admin")">
+                            <a href="@Url.Action("AddMarks","AdminAddMarks")">
                                 <i class="fa fa-plus-circle fa-2x" id="upload-data" style=""></i>
                                 <div id="addDiv" style="width:50px;"><label class="ml-2">Add</label></div>
                             </a>

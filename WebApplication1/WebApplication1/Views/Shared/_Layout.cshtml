@@ -1,5 +1,5 @@
 ﻿@RenderSection("scripts", required: false)
-@*@using (Html.BeginForm("Main", "Home", FormMethod.Get))
+@*@using (Html.BeginForm("Admin", "Home", FormMethod.Get))
 {*@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,7 +49,7 @@
     <body id="page-top">
         <div class="row" style="margin-right:0;">
             <div class="col" id="logoBar" style="background-color: blue; margin-left: 0px; width:150px;">
-                <a class="navbar-brand mr-1" href="@Url.Action("Index","Admin")" style="color: white; font-size: 25px; margin-top: 5px;">
+                <a class="navbar-brand mr-1" href="@Url.Action("DashBoard", "AdminDashBoard")" style="color: white; font-size: 25px; margin-top: 5px;">
                     &nbsp Logo
                 </a>
                 <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#" style="float: right; margin-top: 15px;">
@@ -114,97 +114,97 @@
                     </a>
                 </li>*@
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("EditProfile","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("EditAdminProfile","AdminEditProfile")" id="aa">
                         <img src="~/Images/Group 176@2x.png" height="20" width="20">
                         <span>Edit Profile</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("TeacherView","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("TeacherView","AdminAddteacher")" id="aa">
                         <img src="~/Images/Group 232@2x.png" height="20" width="20">
                         <span>Teacher</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("AddSubjects","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("AddSubjectView","AdminAddsubject")" id="aa">
                         <img src="~/Images/Group 235.png" height="20" width="20">
                         <span>Add Subjects</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("ViewClass","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("ViewClass","AdminClass")" id="aa">
                         <img src="~/Images/Group 242.png" height="20" width="20">
                         <span>Add Class</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("ViewAchievements","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("ViewAchievements","AdminAchivement")" id="aa">
                         <img src="~/Images/img.png" height="20" width="20">
                         <span>Achievements</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("ATTRecords","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("ViewAttendance","AdminAttendance")" id="aa">
                         <img src="~/Images/Group 289.png" height="20" width="20">
                         <span>Attendance Records</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("Message","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("Messages","AdminMessage")" id="aa">
                         <img src="~/Images/Group 204.png" height="20" width="20">
                         <span>Message</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("FeeCollection","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("FeeCollection","AdminFeeCollection")" id="aa">
                         <img src="~/Images/Group 243.png" height="20" width="20">
                         <span>Fee Collection</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("RequestedPage","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("RequestedPage","AdminRequested")" id="aa">
                         <img src="~/Images/Group 246.png" height="20" width="20">
                         <span>Requested</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("ViewTimeTable","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("ViewTimeTable","AdminTimetable")" id="aa">
                         <img src="~/Images/Group 180.png" height="20" width="20">
                         <span>Assign TimeTable</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("EvetsView","Events")" id="aa">
+                    <a class="nav-link" href="@Url.Action("ViewEvents","AdminAddEvents")" id="aa">
                         <img src="~/Images/Group 198.png" height="20" width="20">
                         <span>Add Events</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("LeadingBoardView","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("ViewLeadingBoard","AdminLeadingboard")" id="aa">
                         <img src="~/Images/Group 192@2x.png" height="20" width="20">
                         <span>Leading Board</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("ExamSchedules","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("ViewExamSchedules","AdminAddExamSchedules")" id="aa">
                         <img src="~/Images/Group 290.png" height="20" width="20">
                         <span>Add Exam Schedules</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("Viewresult","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("ViewResult","AdminAddResult")" id="aa">
                         <img src="~/Images/Group 210@2x.png" height="20" width="20">
                         <span>Results</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("StudentsOverView","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("StudentsOverView","AdminAddStudent")" id="aa">
                         <img src="~/Images/Group 292.png" height="20" width="20">
                         <span>Students OverView</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="@Url.Action("AddResultView","Admin")" id="aa">
+                    <a class="nav-link" href="@Url.Action("AddResultView","AdminAddMarks")" id="aa">
                         <img src="~/Images/Group 293.png" height="20" width="20">
                         <span>Add Marks</span>
                     </a>

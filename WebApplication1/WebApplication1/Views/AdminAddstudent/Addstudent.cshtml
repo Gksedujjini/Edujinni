@@ -2,8 +2,7 @@
 @{
 // Layout = null;
 }
-@* "EditProfile", "Admin", FormMethod.Post *@
-@using (Html.BeginForm("EditProfile", "Admin", FormMethod.Post))
+@using (Html.BeginForm("AddStudent", "AdminAddstudent",FormMethod.Post))
 {
 <head>
     <meta charset="utf-8">
@@ -12,15 +11,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <script src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
     <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/humanity/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="~/Scripts/jquery.validate.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <script>
         $.noConflict();
         jQuery(document).ready(function ($) {
@@ -152,7 +149,6 @@
     <div>
         <div class="row ml-2 mr-2">
             <div class="col-md-12 mr-1">
-                <form action="#">
                         <div class="row mt-3">
                             @*<div class="mt-2" id="image1">*@
                             <img src="" alt="User Image" id="image1" />
@@ -177,7 +173,6 @@
                                             <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
                                         </div>
                                     </div>
-                                    @Html.ValidationMessageFor(Model=>Model.student_gender,"",new {@class="text-danger" })
                                 </div>
                             </div>
                         </div>
@@ -194,7 +189,6 @@
                                 </div>
                                 <div class="col-md-2 mt-2">
                                     @Html.DropDownListFor(Model => Model.student_class, list, new { @class = "form-control", @placeholder = "Class" })                                    
-                                    @Html.ValidationMessageFor(Model => Model.student_class, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-md-2 mt-2">
                                     @Html.DropDownListFor(Model => Model.student_section, list, new { @class = "form-control", @placeholder = "Class" })
@@ -202,7 +196,7 @@
                                     @*<select name="section" class="form-control" id="section" placeholder="Section" style="">
                                         <option selected="selected">--Select Section--</option>
                                         <option>A</option>                                      
-                                    </select>*@
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -236,15 +230,13 @@
                             <div class="row">
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_father_name, new { @class = "form-control", @placeholder = "Father Name" })
-                                    @Html.ValidationMessageFor(Model => Model.student_father_name, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(Model=>Model.student_father_name, "", new { @class = "error" })
                                 </div>
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_father_mobile_no, new { @class = "form-control", @placeholder = "Father Mobile No" })
-                                    @Html.ValidationMessageFor(Model => Model.student_father_mobile_no, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_father_occupation, new { @class = "form-control", @placeholder = "Father Occupation" })                                    
-                                    @Html.ValidationMessageFor(Model => Model.student_father_occupation, "", new { @class = "text-danger" })
                                 </div>
                             </div><br>
                             <div class="row">
@@ -265,10 +257,9 @@
                             <div class="row">
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_no_of_siblings, new { @class = "form-control", @placeholder = "Sibbling Name" })
-                                    @Html.ValidationMessageFor(Model => Model.student_no_of_siblings, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-md-4 mt-2">
-                                    @*@Html.TextBoxFor(Model => Model.student_no_of_siblings, new { @class = "form-control", @placeholder = "Age" })*@
+                                    @Html.TextBoxFor(Model => Model.student_no_of_siblings, new { @class = "form-control", @placeholder = "Age" })
                                 </div><br>
 
                             </div><br>
@@ -322,7 +313,6 @@
                                 </div>                                
                             </div>
                         </div><br />
-                </form>
             </div>
         </div>
     </div>

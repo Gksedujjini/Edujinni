@@ -9,7 +9,11 @@ namespace WebApplication1.Controllers
     public class AdminEditProfileController : Controller
     {
         // GET: AdminEditProfile
-        public ActionResult EditProfile()
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult EditAdminProfile()
         {
             return View();
         }

@@ -82,7 +82,7 @@
             <label style="color:white; float:left; font-size:medium;">Kakatiya Educational Society</label>
             @*<input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddAchievements","Admin")'"
                    value="Add Achievements" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">*@
-            <button type="button" class="btn btn-success btn-sm" onclick="location.href='@Url.Action("AddAchievements","Admin")'" style="border-radius:5px; color: white;height:35px; min-width: 60px; width: 160px; float:right; margin-right:10px;">
+            <button type="button" class="btn btn-success btn-sm" onclick="location.href='@Url.Action("AddAchievements","AdminAchivement")'" style="border-radius:5px; color: white;height:35px; min-width: 60px; width: 160px; float:right; margin-right:10px;">
                 <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-2px;"></span><h5 style="margin-top:3px;">&nbsp;Add Achievements</h5>
             </button>
         </div>
@@ -110,7 +110,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <a href="@Url.Action("AddAchievements","Admin")">
+                <a href="@Url.Action("AddAchievements","AdminAchivement")">
                     <i class="fa fa-plus-circle" id="upload-data"></i>
                     <div id="addDiv"><label class="ml-2">Add</label></div>
                 </a>

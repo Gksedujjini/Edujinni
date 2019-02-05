@@ -1,10 +1,12 @@
-﻿@model Edujinni.Models.AddResultView
+﻿@model Edujinni.Models.AddMarks
 @{
 // Layout = null;
 }
-@using (Html.BeginForm("AddResultView", "Home", FormMethod.Post))
+@using (Html.BeginForm("StudentResult", "AdminAddResult", FormMethod.Post))
 {
+
     <!DOCTYPE html>
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +25,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="Content/all.min.css" rel="stylesheet" type="text/css">
         <link href="Content/sb-admin.css" rel="stylesheet">
-        <title>Results</title>
+        <title>Add Result View</title>
         <style>
             .form-control {
                 border-radius: 20px;
@@ -111,14 +113,7 @@
         @{
             List<SelectListItem> list = new List<SelectListItem>();
         }
-        <div class="mt-2">
-            <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddMarks", "AdminAddmarks")'"
-                    style="border-radius:5px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;">
-                <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Add Marks
-            </button>
-            <br />
-        </div>
-        <div class="container-fluid mt-4">
+        @*<div class="container-fluid">
             <!-- Example split danger button -->
             <div class="row mt-3 mb-3">
                 <div class="col-md-3 mt-2">
@@ -142,61 +137,39 @@
                         <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
                     </div>
                 </div>
-            </div>
+            </div>*@
             @* DETAILS STARTED *@
-            @*<div class="row mt-4">
+            <div class="row mt-4">
                 <div class="col-md-6">
-                    <div class="col" id="box">
+                    <div class="col" id="box"  style="background-color:#E7E7E7;">
                         <div class="row">
                             <div class="col-md-6 mt-4 text-left">
                                 <p id="pheading">Name</p>
-                                <p id="pname">Sampath Kumar</p>
+                                @Html.TextBoxFor(Model=>Model.StudentName,new {@class= "form-control"})
                             </div>
                             <div class="col-md-6 mt-4 text-left">
                                 <p id="pheading">Father Name</p>
-                                <p id="pname">Sampath Kumar</p>
+                                @Html.TextBoxFor(Model=>Model.FatherName,new { @class = "form-control"})
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mt-4 text-left">
                                 <p id="pheading">Student Id</p>
-                                <p id="pname">4554545</p>
+                               @Html.TextBoxFor(Model=>Model.StudentId,new { @class="form-control"})
                             </div>
                             <div class="col-md-6 mt-4 text-left">
                                 <p id="pheading">Type of Exam</p>
-                                <p id="pname">Unit Text-1</p>
+                                @Html.TextBoxFor(Model=>Model.ExamType,new { @class="form-control"})  
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 mt-4 text-left">
-                                <div class="col" id="rankbox">
-                                    <p id="pheading">Student Id</p>
-                                    <p id="pname">4554545</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
-            @* DETAILS ENDED *@
-            <div class="row mt-4">
-                <div class="col-md-8">
-                    //STUDENT DETAILS FOR VIEWING RESULTS ARE SHOWN HERE UPON CLICK OVERVIEW IS SHOWN ... SAMPLE LINK IS GIVEN
+                        </div> 
+                        <div class="row mt-4 ml-3">
+                            GRID VIEW FOR RESULTS
+                            GRID VIEW FOR RESULTS
+                            GRID VIEW FOR RESULTS
+                        </div>                    
+                    </div><br />
                 </div>
             </div>
-                    <div class="row">
-                        <a href="@Url.Action("StudentResult", "AdminAddResult")">Student Result</a>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <a href="@Url.Action("AddMarks","AdminAddMarks")">
-                                <i class="fa fa-plus-circle fa-2x" id="upload-data" style=""></i>
-                                <div id="addDiv" style="width:50px;"><label class="ml-2">Add</label></div>
-                            </a>
-                        </div>
-                        <br />
-                    </div>
-                </div>
-</body>
-
-            }
+            @* DETAILS ENDED *@
+    </body>
+}

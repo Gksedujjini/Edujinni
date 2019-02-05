@@ -219,6 +219,7 @@
     <Compile Include="Controllers\AdminAttendanceController.cs" />
     <Compile Include="Controllers\AdminClassController.cs" />
     <Compile Include="Controllers\AdminDashBoardController.cs" />
+    <Compile Include="Controllers\AdminEditProfileController.cs" />
     <Compile Include="Controllers\AdminFeeCollectionController.cs" />
     <Compile Include="Controllers\AdminLeadingboardController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="Models\Admin\Addteacher.cs" />
     <Compile Include="Models\Admin\AdminMain.cs" />
     <Compile Include="Models\Admin\Adminsignup.cs" />
+    <Compile Include="Models\Admin\EditAdminProfile.cs" />
     <Compile Include="Models\Admin\EventsModel.cs" />
     <Compile Include="Models\Admin\LeadingBoard.cs" />
     <Compile Include="Models\Admin\Login.cs" />
@@ -434,6 +436,8 @@
     <Content Include="Views\AdminAddteacher\TeacherInfo.cshtml" />
     <Content Include="Views\AdminAddteacher\TeacherView.cshtml" />
     <Content Include="Views\AdminAddstudent\EditStudent.cshtml" />
+    <Content Include="Views\AdminAddResult\StudentResult.cshtml" />
+    <Content Include="Views\AdminEditProfile\EditAdminProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

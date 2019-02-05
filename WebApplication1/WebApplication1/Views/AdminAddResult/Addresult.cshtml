@@ -2,7 +2,7 @@
 @{
 // Layout = null;
 }
-@using (Html.BeginForm("AddResultView", "Home", FormMethod.Post))
+@using (Html.BeginForm("AddResult", "AdminAddResult", FormMethod.Post))
 {
 
     <!DOCTYPE html>
@@ -121,7 +121,7 @@
                     </div>  
             </div>
             @* DETAILS STARTED *@
-                <a href="@Url.Action("AddMarks","Admin")">Add Student Marks</a>
+                <a href="@Url.Action("StudentResult","AdminAddResult")">Add Student Marks</a>
             @* DETAILS ENDED *@          
         </div>
     </body>

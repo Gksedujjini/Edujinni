@@ -6,18 +6,14 @@ using System.Web.Mvc;
 
 namespace WebApplication1.Controllers
 {
-    public class AdminAddResultController : Controller
+    public class AdminEditProfileController : Controller
     {
-        // GET: AdminAddResult
-        public ActionResult ViewResult()
+        // GET: AdminEditProfile
+        public ActionResult Index()
         {
             return View();
         }
-        public ActionResult AddResult()
-        {
-            return View();
-        }
-        public ActionResult StudentResult()
+        public ActionResult EditAdminProfile()
         {
             return View();
         }

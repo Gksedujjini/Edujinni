@@ -69,19 +69,19 @@
             <div class="row">
                 <div class="col">
                     <label>First Name</label>
-                    @Html.TextBoxFor(Model => Model.FirstName, new { @class = "form-control", @id = "fn" })
+                    @Html.TextBoxFor(Model => Model.teacher_first_name, new { @class = "form-control", @id = "fn" })
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col">
                     <label>Email</label>
-                    @Html.TextBoxFor(Model => Model.email, new { @class = "form-control", @id = "fn" })
+                    @Html.TextBoxFor(Model => Model.teacher_email, new { @class = "form-control", @id = "fn" })
                 </div>
                 </div>
             <div class="row mt-4">
                 <div class="col">
                     <label>Teacher ID</label>
-                    @Html.TextBoxFor(Model => Model.teacherid, new { @class = "form-control", @id = "fn" })
+                    @Html.TextBoxFor(Model => Model.teacher_teacherid, new { @class = "form-control", @id = "fn" })
                 </div>
             </div>
         </div>
@@ -92,13 +92,13 @@
             <div class="row">
                 <div class="col">
                     <label>Last Name</label>
-                    @Html.TextBoxFor(Model => Model.LastName, new { @class = "form-control", @id = "fn" })
+                    @Html.TextBoxFor(Model => Model.teacher_last_name, new { @class = "form-control", @id = "fn" })
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col">
                 <label>Phone No</label>
-                @Html.TextBoxFor(Model => Model.phone_no, new { @class = "form-control", @id = "fn" })
+                @Html.TextBoxFor(Model => Model.teacher_phone_no, new { @class = "form-control", @id = "fn" })
             </div>
             </div>
         </div>
@@ -109,13 +109,13 @@
             <div class="row">
                 <div class="col">
                     <label>Gender</label>
-                    @Html.TextBoxFor(Model => Model.gender, new { @class = "form-control", @id = "fn" })
+                    @Html.TextBoxFor(Model => Model.teacher_gender, new { @class = "form-control", @id = "fn" })
                     </div>
                 </div>
             <div class="row mt-4">
                 <div class="col">
                     <label>Date of Birth</label>
-                    @Html.TextBoxFor(Model => Model.dob, new { @class = "form-control", @id = "fn" })
+                    @Html.TextBoxFor(Model => Model.teacher_dob, new { @class = "form-control", @id = "fn" })
                 </div>
                 </div>
         </div>
@@ -129,15 +129,15 @@
     <div class="row mt-4">
         <div class="col-md-4">
             <label>Subject 1</label>
-            @Html.TextBoxFor(Model => Model.subject1, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_subject1, new { @class = "form-control", @id = "fn" })
         </div>
         <div class="col-md-4">
             <label>Subject 2</label>
-            @Html.TextBoxFor(Model => Model.subject2, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_subject2, new { @class = "form-control", @id = "fn" })
         </div>
         <div class="col-md-4">
             <label>Qualification</label>
-            @Html.TextBoxFor(Model => Model.qualification, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_qualification, new { @class = "form-control", @id = "fn" })
         </div>
     </div>
 
@@ -146,7 +146,7 @@
     <div class="row mt-4 mb-2">
         <div class="col-md-4">
             <label>Date of Joining</label>
-            @Html.TextBoxFor(Model => Model.dateofjoining, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_date_of_joining, new { @class = "form-control", @id = "fn" })
         </div>
     </div>
     <br />
@@ -160,15 +160,15 @@
     <div class="row mt-4">
         <div class="col-md-4">
             <label>Flat No</label>
-            @Html.TextBoxFor(Model => Model.flat_no, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_flat_no, new { @class = "form-control", @id = "fn" })
         </div>
         <div class="col-md-4">
             <label>Building Name</label>
-            @Html.TextBoxFor(Model => Model.Builing_Name, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_buildingname, new { @class = "form-control", @id = "fn" })
         </div>
         <div class="col-md-4">
             <label>Street-1</label>
-            @Html.TextBoxFor(Model => Model.street_1, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_street, new { @class = "form-control", @id = "fn" })
         </div>
     </div>
 
@@ -177,15 +177,15 @@
     <div class="row mt-4">
         <div class="col-md-4">
             <label>Street-2</label>
-            @Html.TextBoxFor(Model => Model.street_2, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_street1, new { @class = "form-control", @id = "fn" })
         </div>
         <div class="col-md-4">
             <label>Area</label>
-            @Html.TextBoxFor(Model => Model.area, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_area, new { @class = "form-control", @id = "fn" })
         </div>
         <div class="col-md-4">
             <label>City</label>
-            @Html.TextBoxFor(Model => Model.city, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_city, new { @class = "form-control", @id = "fn" })
         </div>
     </div>
 
@@ -194,11 +194,11 @@
     <div class="row mt-4">
         <div class="col-md-4">
             <label>State</label>
-            @Html.TextBoxFor(Model => Model.state, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_state, new { @class = "form-control", @id = "fn" })
         </div>
         <div class="col-md-4">
             <label>Code</label>
-            @Html.TextBoxFor(Model => Model.pincode, new { @class = "form-control", @id = "fn" })
+            @Html.TextBoxFor(Model => Model.teacher_pincode, new { @class = "form-control", @id = "fn" })
         </div>
         <div class="col-md-2 col-sm-12 col-xs-12 mt-4">
             <button type="button" onclick="location.href='@Url.Action("TeacherEditProfileView","Admin")'" class="btn" style="width:110px; border-radius:5px; height:35px;  background-color:#5A5C59; color:white;">Edit</button>

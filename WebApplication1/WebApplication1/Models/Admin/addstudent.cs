@@ -14,7 +14,7 @@ namespace Edujinni.Models
         public int student_id { get; set; }
         [Required(ErrorMessage = "Image is mandatory")]
         public byte[] student_image { get; set; }
-        [Required(ErrorMessage = "Please Enter Student Section")]
+        [Required(ErrorMessage = "Please Select Student Section")]
         public string student_section { get; set; }
         [Required(ErrorMessage = "Enter First Name")]
         [StringLength(1)]

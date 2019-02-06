@@ -54,6 +54,8 @@ namespace Edujinni.Models
         public string update_by { get; set; }
         public DateTime update_date { get; set; }
         public int class_id { get; set; }
+        // added for dropdownlist purpose
+        public string class_name { get; set; }
         public int school_id { get; set; }
         public string teacher_teacherid { get; set; }
         public string teacher_buildingname { get; set; }

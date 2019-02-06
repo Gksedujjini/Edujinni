@@ -347,3 +347,4 @@ C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bi
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\gundlamallaiah\Source\Repos\edujinni\WebApplication1\WebApplication1\obj\Debug\edujinni.csprojResolveAssemblyReference.cache

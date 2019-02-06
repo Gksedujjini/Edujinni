@@ -200,13 +200,14 @@
                         <br>
                         @{ 
                             List<SelectListItem> list = new List<SelectListItem>();
+                            list = ViewBag.s;
                         }
                         <b style="float:left;">Academic Information</b><br />
                         <div class="row mt-4">
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-4 mt-3">
-                                        @Html.DropDownListFor(Model => Model.teacher_subject1,list,"Subject 1",new {@class = "form-control"})
+                                        @Html.DropDownListFor(Model => Model.teacher_subject1,list,"Subject1",new {@class = "form-control"})
                                         @Html.ValidationMessageFor(Model => Model.teacher_subject1, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-md-4 mt-3">
@@ -220,8 +221,8 @@
                                 </div><br>
                                 <div class="row">
                                     <div class="col-md-4 mt-3">
-                                        @Html.TextBoxFor(Model => Model.teacher_id, new { @class = "form-control", @placeholder = "Teacher ID" })
-                                        @Html.ValidationMessageFor(Model => Model.teacher_id, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(Model => Model.teacher_teacherid, new { @class = "form-control", @readonly = "readonly", @placeholder = "Teacher ID" })
+                                        @Html.ValidationMessageFor(Model => Model.teacher_teacherid, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-md-4 mt-3">
                                         @Html.TextBoxFor(Model => Model.teacher_department, new { @class = "form-control", @placeholder = "Teaching" })

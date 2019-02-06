@@ -16,7 +16,6 @@ namespace Edujinni.Models
         [Required(ErrorMessage = "Please Enter Student Section")]
         public string student_section { get; set; }
         [Required(ErrorMessage ="Enter First Name")]
-        [StringLength(1)]
         public string student_first_name { get; set; }
         [Required(ErrorMessage = "Please Enter Last Name")]
         public string student_last_name { get; set; }

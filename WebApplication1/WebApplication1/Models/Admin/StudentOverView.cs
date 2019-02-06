@@ -7,7 +7,8 @@ namespace Edujinni.Models
 {
     public class StudentOverView
     {
-        public byte[] student_image { get; set; }
+        //public byte[] student_image { get; set; }
+        public string student_image { get; set; }
         public string student_first_name { get; set; }
         public string student_last_name { get; set; }
         public string student_gender { get; set;}   

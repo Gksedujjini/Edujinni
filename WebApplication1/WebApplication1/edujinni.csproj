@@ -425,7 +425,6 @@
     <Content Include="Views\AdminAddResult\ViewResult.cshtml" />
     <Content Include="Views\AdminAddstudent\AddStudent.cshtml" />
     <Content Include="Views\AdminAddstudent\StudentInfo.cshtml" />
-    <Content Include="Views\AdminAddstudent\StudentsOverView.cshtml" />
     <Content Include="Views\AdminAddmarks\AddMarks.cshtml" />
     <Content Include="Views\AdminAddmarks\AddResultView.cshtml" />
     <Content Include="Views\AdminDashBoard\DashBoard.cshtml" />
@@ -438,6 +437,7 @@
     <Content Include="Views\AdminAddstudent\EditStudent.cshtml" />
     <Content Include="Views\AdminAddResult\StudentResult.cshtml" />
     <Content Include="Views\AdminEditProfile\EditAdminProfile.cshtml" />
+    <Content Include="Views\AdminAddstudent\StudentsOverView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

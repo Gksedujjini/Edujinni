@@ -98,7 +98,10 @@
                            <div class="col align-se">
                            </div>
                            <div class="col align-self-end">
-                               <input class="btn btn-success" type="submit" name="submit" value="Edit" id="editbtn" />
+                               <input class="btn btn-success" type="button" name="submit" value="Edit" id="editbtn" onclick="location.href='@Url.Action("AddEvents","AdminAddEvents")'" />  
+                               @Html.ActionLink("Edit", "AddEvents", "AdminAddEvents",
+                                               routeValues: new { name = item.event_name },
+                                           htmlAttributes: new { @class = "icon-1 info-tooltip", @Title = "Edit" })                            
                            </div>
                            <div class="col align-self-center">
                                <input type="submit" class="btn btn-danger" name="submit" value="Delete" id="editbtn" />

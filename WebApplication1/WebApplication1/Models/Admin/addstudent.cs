@@ -13,7 +13,7 @@ namespace Edujinni.Models
         //[Required(ErrorMessage = "Please Enter StudentId")]
         public int student_id { get; set; }
         public byte[] student_image { get; set; }
-        [Required(ErrorMessage = "Please Enter Student Section")]
+        [Required(ErrorMessage = "Please Select Student Section")]
         public string student_section { get; set; }
         [Required(ErrorMessage ="Enter First Name")]
         public string student_first_name { get; set; }

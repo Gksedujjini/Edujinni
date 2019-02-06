@@ -17,7 +17,7 @@
     <script src="~/Scripts/jquery.validate.js"></script>
     <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/humanity/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $.noConflict();
         jQuery(document).ready(function ($) {
@@ -172,7 +172,7 @@
                                             @Html.RadioButtonFor(Model => Model.student_gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale", @style = "margin-left:15px" })
                                             <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
                                         </div>
-                                    </div>@Html.ValidationMessageFor(Model => Model.student_gender, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -188,22 +188,14 @@
                                     @Html.ValidationMessageFor(Model => Model.student_last_name, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-md-2 mt-2">
-                                    @*@Html.DropDownListFor(Model => Model.class_name, ViewBag.clsname as SelectList, "Select ClassName", new { @class = "form-control", @placeholder = "Class" })*@  
-                                    <select name="section" class="form-control" id="classs" placeholder="Section" style="">
-                                        <option selected="selected">--Select Section--</option>
-                                        @foreach (var item in ViewBag.clsname)
-                                        {
-                                            <option>@item.class_name</option>
-                                        }
-                                    </select>                                  
+                                    @Html.DropDownListFor(Model => Model.student_class, list, new { @class = "form-control", @placeholder = "Class" })                                    
                                 </div>
                                 <div class="col-md-2 mt-2">
-                                    <select name="section" class="form-control" id="section" placeholder="Section" style="">
+                                    @Html.DropDownListFor(Model => Model.student_section, list, new { @class = "form-control", @placeholder = "Class" })
+                                    @Html.ValidationMessageFor(Model => Model.student_section, "", new { @class = "text-danger" }) 
+                                    @*<select name="section" class="form-control" id="section" placeholder="Section" style="">
                                         <option selected="selected">--Select Section--</option>
-                                        @foreach (var item in ViewBag.sectnname)
-                                        {
-                                            <option>@item.section_name</option>
-                                        }                               
+                                        <option>A</option>                                      
                                     </select>
                                 </div>
                             </div>
@@ -215,12 +207,15 @@
                             <div class="row">
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_roll_no, new { @class = "form-control", @placeholder = "Roll No" })
+                                    @Html.ValidationMessageFor(Model => Model.student_roll_no, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_id, new { @class = "form-control", @id = "stdId", @placeholder = "Student ID" })
+                                    @*@Html.ValidationMessageFor(Model=>Model.student_id)*@
                                 </div>
                                 <div class="col-md-4 mt-2">
-                                    @Html.TextBoxFor(Model => Model.student_roll_no, new {@class = "form-control", @placeholder = "Date of Birth" ,@id="dob",@name="date"})
+                                    @Html.TextBoxFor(Model => Model.student_dob, new { @class = "form-control", @placeholder = "Date of Birth", @id = "dob", @name = "date" })
+                                    @Html.ValidationMessageFor(Model => Model.student_dob, "", new { @class = "text-danger" })
                                     <span class="glyphicon glyphicon-calendar form-control-feedback mr-4" style="margin-right:-15px;"></span>                                   
                                 </div>
                             </div><br>
@@ -235,15 +230,13 @@
                             <div class="row">
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_father_name, new { @class = "form-control", @placeholder = "Father Name" })
-                                    @Html.ValidationMessageFor(Model=>Model.student_father_name, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(Model=>Model.student_father_name, "", new { @class = "error" })
                                 </div>
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_father_mobile_no, new { @class = "form-control", @placeholder = "Father Mobile No" })
-                                    @Html.ValidationMessageFor(Model=>Model.student_father_mobile_no,"",new {@class="text-danger" })
                                 </div>
                                 <div class="col-md-4 mt-2">
-                                    @Html.TextBoxFor(Model => Model.student_father_occupation, new { @class = "form-control", @placeholder = "Father Occupation" })    
-                                    @Html.ValidationMessageFor(Model=>Model.student_father_occupation,"",new { @class="text-danger"})                                
+                                    @Html.TextBoxFor(Model => Model.student_father_occupation, new { @class = "form-control", @placeholder = "Father Occupation" })                                    
                                 </div>
                             </div><br>
                             <div class="row">
@@ -263,11 +256,11 @@
                         <br>
                             <div class="row">
                                 <div class="col-md-4 mt-2">
-                                    @Html.TextBoxFor(Model => Model.student_no_of_siblings, new { @class = "form-control", @placeholder = "No. Of Sibblings" })
+                                    @Html.TextBoxFor(Model => Model.student_no_of_siblings, new { @class = "form-control", @placeholder = "Sibbling Name" })
                                 </div>
-                                @*<div class="col-md-4 mt-2">
+                                <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_no_of_siblings, new { @class = "form-control", @placeholder = "Age" })
-                                </div><br>*@
+                                </div><br>
 
                             </div><br>
                             <hr>
@@ -283,6 +276,7 @@
                                     </div>
                                     <div class="col-md-4 mt-2">
                                         @Html.TextBoxFor(Model => Model.student_buliding_name, new { @class = "form-control", @placeholder = "Building Name" })
+                                        @Html.ValidationMessageFor(Model => Model.student_buliding_name, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-md-4 mt-2">
                                         @Html.TextBoxFor(Model => Model.student_street, new { @class = "form-control", @placeholder = "Street 1" })
@@ -293,6 +287,7 @@
                                 <div class="row">
                                     <div class="col-md-4 mt-2">
                                         @Html.TextBoxFor(Model => Model.student_street1, new { @class = "form-control", @placeholder = "Street 2" })
+                                        @Html.ValidationMessageFor(Model => Model.student_street1, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-md-4 mt-2">
                                         @Html.TextBoxFor(Model => Model.student_area, new { @class = "form-control", @placeholder = "Area" })

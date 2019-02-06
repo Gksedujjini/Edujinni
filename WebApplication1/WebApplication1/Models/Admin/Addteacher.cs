@@ -58,6 +58,8 @@ namespace Edujinni.Models
         public string teacher_teacherid { get; set; }
         public string teacher_buildingname { get; set; }
         public string teacher_street1 { get; set; }
+        // declared for update purpose
+        public string teacher_fullname { get; set; }
 
     }
 }

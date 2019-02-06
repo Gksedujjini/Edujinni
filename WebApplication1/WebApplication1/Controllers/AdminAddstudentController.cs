@@ -15,6 +15,7 @@ namespace WebApplication1.Controllers
 {
     public class AdminAddstudentController : Controller
     {
+        Edujinni.Models.StudentModel st = new Edujinni.Models.StudentModel();
         // GET: AdminAddstudent
         [HttpGet]
         public async Task<ActionResult> StudentsOverView(StudentOverView details)
@@ -29,7 +30,6 @@ namespace WebApplication1.Controllers
             HttpResponseMessage classs = await client.PostAsJsonAsync("classNames/classDetailsList",details);
             HttpResponseMessage section = await client.PostAsJsonAsync("sectionList", details);
             HttpResponseMessage response = await client.PostAsJsonAsync("studentsList", details);
-      
             if (classs.IsSuccessStatusCode == true)
             {
                 var clas = classs.Content.ReadAsStringAsync().Result;
@@ -52,7 +52,7 @@ namespace WebApplication1.Controllers
                 JObject result = JObject.Parse(StuResponse);
                 JArray data = (JArray)result["Data"];
                 IList<StudentOverView> Students = data.ToObject<IList<StudentOverView>>();
-                ViewBag.allstudents = Students;
+                ViewBag.stu = Students;
             }
             return View();
         }
@@ -67,7 +67,7 @@ namespace WebApplication1.Controllers
                 model.school_id = 1;
                 model.class_id = 6;
                 model.section_id = 3;
-                HttpResponseMessage response = await client.PostAsJsonAsync("addingStudentDetails ", model);
+                HttpResponseMessage response = await client.PostAsJsonAsync("addingStudentDetails", model);
                 HttpResponseMessage classes = await client.PostAsJsonAsync("classNames/classDetailsList", model);
                 HttpResponseMessage sections = await client.PostAsJsonAsync("sectionList", model);
                 if(classes.IsSuccessStatusCode==true)
@@ -91,8 +91,10 @@ namespace WebApplication1.Controllers
                     Response.Write("<script>alert('Student Added successfully')</script>");
                     return RedirectToAction("StudentsOverView");
                 }
-                Response.Write("<script>Error adding the Event</script>");
+                else { 
+                Response.Write("<script>alert('Error adding Student')</script>");
             ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+                }
             }
         
             return View(model);
@@ -132,9 +134,68 @@ namespace WebApplication1.Controllers
             }
             return View();
         }
-        public ActionResult StudentInfo()
+        [HttpGet]
+        public async Task<ActionResult> StudentInfo(int id, StudentModel studentinfo)
+        {
+            using (HttpClient http = new HttpClient())
+            {
+                //StudentModel st = new StudentModel();
+                http.BaseAddress = new Uri("http://www.edujinni.in/");
+                http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                http.DefaultRequestHeaders.Accept.Clear();
+                studentinfo.school_id = 1;
+                studentinfo.student_id = id;
+                studentinfo.class_id = 6;
+                studentinfo.section_id = 3;
+                HttpResponseMessage details = await http.PostAsJsonAsync("perticularStudent", studentinfo);
+                if(details.IsSuccessStatusCode == true)
+                {
+                    var det = details.Content.ReadAsStringAsync().Result;
+                    JObject s = JObject.Parse(det);
+                    JArray a = (JArray)s["Data"];
+                    IList<StudentModel> list = a.ToObject<IList<StudentModel>>();
+                    ViewBag.studetails = list;
+                    foreach (var item in list)
+                    {
+                        if (id == item.student_id)
+                        {
+                            //Response.Write("<script>alert('Detils Found')</script>");
+                            st.student_first_name = item.student_first_name;
+                            st.student_last_name = item.student_last_name;
+                            st.student_id = item.student_id;
+                            st.class1 = item.class1;
+                            st.student_section = item.student_section;
+                            st.student_admission_date = item.student_admission_date;
+                            st.student_gender = item.student_gender;
+                            st.student_father_mobile_no = item.student_father_mobile_no;
+                            st.student_dob = item.student_dob;
+                            st.grade = item.grade;
+                            st.attendance = item.attendance;
+                            st.marks = item.marks;
+                            st.student_father_name = item.student_father_name;
+                            st.Achievements = item.Achievements;
+                            st.Address = item.student_city;
+                        }                         
+                    }
+                    
+                }
+                else
+                {
+                    Response.Write("<script>alert('Details Not Found')</script>");
+                    return View("StudentOverView");
+                }
+
+            }
+            return View();
+        }        
+        [HttpPost]
+        public ActionResult EditStudent()
         {
             return View();
         }
+        //public ActionResult StudentsOverView()
+        //{
+        //    return View();
+        //}
     }
 }

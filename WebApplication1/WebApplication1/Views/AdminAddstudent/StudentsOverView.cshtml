@@ -139,15 +139,15 @@
                                     @Html.DisplayNameFor(model => model.section_name)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.student_grade)
+                                    @*@Html.DisplayNameFor(model => model.)*@
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach(var student in ViewBag.allstudents)
+                            @foreach(var student in ViewBag.stu)
                                 {
                                 <tr>
-                                    <td  align="center">
+                                    <td  align="center" >
                                         @student.student_id
                                     </td>
                                     <td align="center">
@@ -157,10 +157,12 @@
                                         @*@student.student_father_name*@
                                     </td>
                                     <td align="center">
-                                        @*@student.section_name*@
+                                        @student.student_grade
                                     </td>
                                     <td align="center">
-                                        @student.student_grade
+                                        @Html.ActionLink("View", "StudentInfo", "AdminAddstudent",
+                                               routeValues: new { id = student.student_id },
+                                               htmlAttributes: new { @class = "icon-1 info-tooltip", @Title = "View" })
                                     </td>
                                 </tr>
                                 }

@@ -16,7 +16,8 @@ namespace WebApplication1.Controllers
     public class AdminAddstudentController : Controller
     {
         Edujinni.Models.StudentModel st = new Edujinni.Models.StudentModel();
-        // GET: AdminAddstudent
+
+                         //************************COMPLETE STUDENTS LIST IS SHOWN***********************/
         [HttpGet]
         public async Task<ActionResult> StudentsOverView(StudentOverView details)
         {
@@ -56,6 +57,12 @@ namespace WebApplication1.Controllers
             }
             return View();
         }
+
+
+
+                        //**************************ADDING STUDENT CODE GOES HERE****************************//
+
+
         [HttpPost]
         public async Task<ActionResult> AddStudent(addstudent model)
         {
@@ -65,27 +72,41 @@ namespace WebApplication1.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Accept.Clear();
                 model.school_id = 1;
-                model.class_id = 6;
-                model.section_id = 3;
+                model.class_id = 5;
+                model.section_id = 4;
+                model.student_section = "c";
+                model.student_chiled_no = 1;
+                model.insert_by = "ss";
+                model.insert_date = DateTime.Now;
+                model.update_by = "";
+                model.update_date = DateTime.Now;
+                model.student_section = "c";
+                model.student_admission_date = DateTime.Now;
+                model.Student_status = "sai";
+                model.student_class = "1st class";
+                model.student_admission_id = "1234";
+                model.student_password = "123";
+                model.parent_password = "qqq";
+
                 HttpResponseMessage response = await client.PostAsJsonAsync("addingStudentDetails", model);
-                HttpResponseMessage classes = await client.PostAsJsonAsync("classNames/classDetailsList", model);
-                HttpResponseMessage sections = await client.PostAsJsonAsync("sectionList", model);
-                if(classes.IsSuccessStatusCode==true)
-                {
-                    var classnames = classes.Content.ReadAsStringAsync().Result;
-                    JObject cl = JObject.Parse(classnames);
-                    JArray cll = (JArray)cl["Data"];
-                    IList<addstudent> classdetails = cll.ToObject<IList<addstudent>>();
-                    ViewBag.clsname = classdetails;
-                }
-                if(sections.IsSuccessStatusCode==true)
-                {
-                    var section = sections.Content.ReadAsStringAsync().Result;
-                    JObject s = JObject.Parse(section);
-                    JArray ss = (JArray)s["Data"];
-                    IList<addstudent> sectionnames = ss.ToObject<IList<addstudent>>();
-                    ViewBag.sectnname = sectionnames;
-                }
+            //    HttpResponseMessage classes = await client.PostAsJsonAsync("classNames/classDetailsList", model);
+              //  HttpResponseMessage sections = await client.PostAsJsonAsync("sectionList", model);
+                //if(classes.IsSuccessStatusCode==true)
+                //{
+                //    var classnames = classes.Content.ReadAsStringAsync().Result;
+                //    JObject cl = JObject.Parse(classnames);
+                //    JArray cll = (JArray)cl["Data"];
+                //    IList<addstudent> classdetails = cll.ToObject<IList<addstudent>>();
+                //    ViewBag.clsname = classdetails;
+                //}
+                //if(sections.IsSuccessStatusCode==true)
+                //{
+                //    var section = sections.Content.ReadAsStringAsync().Result;
+                //    JObject s = JObject.Parse(section);
+                //    JArray ss = (JArray)s["Data"];
+                //    IList<addstudent> sectionnames = ss.ToObject<IList<addstudent>>();
+                //    ViewBag.sectnname = sectionnames;
+                //}
                 if (response.IsSuccessStatusCode==true)
                 {
                     Response.Write("<script>alert('Student Added successfully')</script>");
@@ -110,6 +131,8 @@ namespace WebApplication1.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Accept.Clear();
                 model.school_id = 1;
+                model.class_id = 5;
+                model.section_id = 4;
                 HttpResponseMessage classes = await client.PostAsJsonAsync("classNames/classDetailsList", model);
                 HttpResponseMessage sections = await client.PostAsJsonAsync("sectionList", model);
                 if (classes.IsSuccessStatusCode == true)
@@ -134,6 +157,10 @@ namespace WebApplication1.Controllers
             }
             return View();
         }
+
+
+                     //***********************BASED ON SELECTION COMPLETE DETAILS IS SHOWN CODE*********************************///////
+
         [HttpGet]
         public async Task<ActionResult> StudentInfo(int id, StudentModel studentinfo)
         {
@@ -187,15 +214,20 @@ namespace WebApplication1.Controllers
 
             }
             return View();
-        }        
+        }       
+        
+                        ////////*************EDIT STUDENT CODE GOES HERE******************************/////// 
+
         [HttpPost]
+        //public ActionResult EditStudent()
+        //{
+        //    return View();
+        //}
+        [HttpGet]
         public ActionResult EditStudent()
         {
             return View();
         }
-        //public ActionResult StudentsOverView()
-        //{
-        //    return View();
-        //}
+       
     }
 }

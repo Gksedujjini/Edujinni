@@ -170,15 +170,18 @@
             <br /><label>@item.student_flat_no</label>
             @*@Html.TextAreaFor(Model => Model.Address, new { @class = "form-control", @id = "fn" })*@
         </div>    
-        </div>}
+        </div>
     <div class="row mt-4">   
         <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
             <button type="button" onclick="location.href='@Url.Action("AddStudent","AdminAddstudent")'" class="btn" style="width:200px; border-radius:5px; height:35px;  background-color:#5A5C59; color:white;">Edit</button>
+            @Html.ActionLink("Edit", "AddStudent", "AdminAddstudent",
+                                               routeValues: new { id = item.student_id },
+                                               htmlAttributes: new { @class = "icon-1 info-tooltip", @Title = "View" })
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
             <button type="button" class="btn btn-danger" style="width:200px; border-radius:5px; height:35px;">Delete</button>
         </div>
-    </div>
+    </div>}
     <br />
 </body>
 </html>

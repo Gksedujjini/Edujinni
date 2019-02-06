@@ -1,0 +1,133 @@
+﻿@model Edujinni.Models.EventsModel
+@{
+//Layout = null;
+}
+@using (Html.BeginForm("UpdateEvents", "AdminAddEvents", FormMethod.Post))
+{
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/humanity/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script>
+        $.noConflict();
+        jQuery(document).ready(function ($) {
+           // $("#date").val("");
+            $("#date").datepicker({Changemonth:true,Changeyear:true});
+        });
+        </script>
+        <title>AddEventsView</title>
+
+        <script>
+        $(document).ready(function () {
+            $('#upload-data1').click(function () {
+                $('#getfile1').trigger('click');
+                return false;
+            });
+            $('#upload-data1').mouseover(function () {
+                $('#upload-data1').css('color', 'blue');
+            });
+            $('#upload-data1').mouseout(function () {
+                $('#upload-data1').css('color', 'black');
+            });
+        });
+        </script>
+        <style>
+            #cntrn {
+                margin-left: auto;
+            }
+
+            #image1 {
+                /*margin-left: 140px;*/
+                background-color: white;
+                width: 130px;
+                height: 100px;
+                text-align: right;
+                border-radius: 10px;
+            }
+
+            #upload-data1 {
+                margin-right: -17px;
+                color: black;
+                font-size: 20px;
+                margin-top: 10px;
+            }
+
+            .form-control {
+                border-radius: 20px;
+                background-color: white;
+            }
+
+            #btnsave {
+                border-radius: 15px;
+                background-color: #01BE66;
+                color: white;
+                margin-bottom: 10px;
+            }
+
+            #imguser {
+                color: blue;
+                margin-top: 15px;
+            }
+        </style>
+    </head>
+    <body>
+
+        @* ****************UPDATING  EVENTS***************** *@
+        <div class="" id="update">
+            <div class="row ml-2 mr-2 mt-3">
+                <center>
+                    <div class="col  mb-3" style="background-color: #f2f2f2;">
+                        <div class="row mt-3">
+                            <div class="mt-2" id="image1">
+                                <center><i class="fa fa-user fa-5x" id="imguser"></i></center>
+                                <i class="fa fa-plus-circle upload-data" id="upload-data1"></i>
+                                <input class="" id="getfile1" style="display: none;" type="file" accept="image/*" />
+                            </div>
+                        </div>
+                        <div class="form-row mt-4">
+                            <div class="col-md-12 mt-2">
+                                @Html.TextBoxFor(Model => Model.event_date, new { @class = "form-control", @placeholder = "Select Event Date", @id = "date" })
+                                @Html.ValidationMessageFor(Model => Model.event_date, "", new { @class = "text-danger" })
+                                <span class="glyphicon glyphicon-calendar form-control-feedback mr-4"></span>
+                            </div>
+                        </div>
+                        <div class="form-row mt-4">
+                            <div class="col-md-12 mt-2">
+                                @Html.TextBoxFor(Model => Model.event_name, new { @class = "form-control", @placeholder = "Enter Event Name" })
+                                @Html.ValidationMessageFor(Model => Model.event_name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-row mt-4">
+                            <div class="col-md-12 mt-2">
+                                @Html.TextAreaFor(Model => Model.event_description, new { @class = "form-control", @placeholder = "Enter Event Description" })
+                                @Html.ValidationMessageFor(Model => Model.event_description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-row mt-4">
+                            <div class="col-md-12 mt-2">
+                                <input type="submit" name="submit" value="Update" class="form-control" id="btnsave" />    
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+
+        </div>
+    </body>
+</html>
+}

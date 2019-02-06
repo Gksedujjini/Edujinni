@@ -33,12 +33,14 @@ namespace Edujinni.Models
         public string update_by { get; set; }
         public Nullable<System.DateTime> update_date { get; set; }
         public Nullable<int> class_id { get; set; }
+        // added for dropdownlist purpose
+        public string class_name { get; set; }
         public int school_id { get; set; }
         public string teacher_teacherid { get; set; }
         public string teacher_buildingname { get; set; }
         public string teacher_street1 { get; set; }
         public string teacher_status { get; set; }
-        public string teacher_fullname { get; set; }
+        public string teacher_fullname { get;set; }
     }
     //public class TeacherModels
     //{

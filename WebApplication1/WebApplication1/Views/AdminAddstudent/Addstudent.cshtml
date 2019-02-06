@@ -145,6 +145,11 @@
 <body>
     @{ 
         List<SelectListItem> list = new List<SelectListItem>();
+        //foreach (var item in ViewBag.clsname)
+        //{
+        //    list.Add(@item.class_name);
+        //}
+
     }
     <div>
         <div class="row ml-2 mr-2">
@@ -210,8 +215,8 @@
                                     @Html.ValidationMessageFor(Model => Model.student_roll_no, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-md-4 mt-2">
-                                    @Html.TextBoxFor(Model => Model.student_id, new { @class = "form-control", @id = "stdId", @placeholder = "Student ID" })
-                                    @Html.ValidationMessageFor(Model=>Model.student_id)
+                                    @*@Html.TextBoxFor(Model => Model.student_id, new { @class = "form-control", @id = "stdId", @placeholder = "Student ID" })
+                                    @Html.ValidationMessageFor(Model=>Model.student_id)*@
                                 </div>
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_dob, new { @class = "form-control", @placeholder = "Date of Birth", @id = "dob", @name = "date" })

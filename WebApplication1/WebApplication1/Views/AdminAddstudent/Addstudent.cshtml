@@ -196,7 +196,7 @@
                                     @*<select name="section" class="form-control" id="section" placeholder="Section" style="">
                                         <option selected="selected">--Select Section--</option>
                                         <option>A</option>                                      
-                                    </select>
+                                    </select>*@
                                 </div>
                             </div>
                         </div>
@@ -211,7 +211,7 @@
                                 </div>
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_id, new { @class = "form-control", @id = "stdId", @placeholder = "Student ID" })
-                                    @*@Html.ValidationMessageFor(Model=>Model.student_id)*@
+                                    @Html.ValidationMessageFor(Model=>Model.student_id)
                                 </div>
                                 <div class="col-md-4 mt-2">
                                     @Html.TextBoxFor(Model => Model.student_dob, new { @class = "form-control", @placeholder = "Date of Birth", @id = "dob", @name = "date" })

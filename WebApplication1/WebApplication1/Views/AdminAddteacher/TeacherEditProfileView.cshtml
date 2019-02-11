@@ -2,9 +2,10 @@
 @{
 // Layout = null;
 }
-@using (Html.BeginForm("EditProfile", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+ @*new { enctype = "multipart/form-data" }*@
+@using (Html.BeginForm())
 {
-    <head>
+        <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -190,7 +191,7 @@
                                         @Html.ValidationMessageFor(Model => Model.teacher_phone_no, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-md-4 mt-3">
-                                        @Html.TextBoxFor(Model => Model.teacher_dob, new { @class = "form-control", @placeholder = "Date Of Birth" ,@id="date"})
+                                        @Html.TextBoxFor(Model => Model.teacher_dob, new { @class = "form-control", @placeholder = "Date Of Birth", @id = "date" })
                                         @Html.ValidationMessageFor(Model => Model.teacher_dob, "", new { @class = "text-danger" })
                                     </div>
                                 </div><br>
@@ -199,19 +200,21 @@
                         </div>
                         <br>
                         @{ 
+
                             List<SelectListItem> list = new List<SelectListItem>();
-                            list = ViewBag.s;
+                            list = TempData["x"] as List<SelectListItem>;
+                            TempData.Keep();
                         }
                         <b style="float:left;">Academic Information</b><br />
                         <div class="row mt-4">
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-4 mt-3">
-                                        @Html.DropDownListFor(Model => Model.teacher_subject1,list,"Subject1",new {@class = "form-control"})
+                                        @Html.DropDownListFor(Model => Model.teacher_subject1, list, "-Subject 1-", new { @class = "form-control" })
                                         @Html.ValidationMessageFor(Model => Model.teacher_subject1, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-md-4 mt-3">
-                                        @Html.DropDownListFor(Model => Model.teacher_subject2, list, "Subject 2", new { @class = "form-control" })
+                                        @Html.DropDownListFor(Model => Model.teacher_subject2, list, "-Subject 2-", new { @class = "form-control" })
                                         @Html.ValidationMessageFor(Model => Model.teacher_subject2, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-md-4 mt-3">
@@ -221,8 +224,11 @@
                                 </div><br>
                                 <div class="row">
                                     <div class="col-md-4 mt-3">
-                                    @Html.TextBoxFor(Model => Model.teacher_teacherid, new { @class = "form-control", @readonly = "readonly", @placeholder = "Teacher ID" })
-                                        @Html.ValidationMessageFor(Model => Model.teacher_teacherid, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(Model => Model.teacher_id, new
+                               {
+                                   @class = "form-control", @*@readonly = "readonly",*@ @placeholder = "Teacher ID"
+                               })
+                                        @Html.ValidationMessageFor(Model => Model.teacher_id, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-md-4 mt-3">
                                         @Html.TextBoxFor(Model => Model.teacher_department, new { @class = "form-control", @placeholder = "Teaching" })
@@ -245,7 +251,7 @@
                                         @Html.ValidationMessageFor(Model => Model.teacher_street, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-sm-6 col-md-4 mt-3">
-                                        @Html.TextBoxFor(Model => Model.teacher_date_of_joining, new { @class = "form-control", @placeholder = "Date of Joining" ,@id="date1"})
+                                        @Html.TextBoxFor(Model => Model.teacher_date_of_joining, new { @class = "form-control", @placeholder = "Date of Joining", @id = "date1" })
                                         @Html.ValidationMessageFor(Model => Model.teacher_date_of_joining, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -270,8 +276,14 @@
                                         @*@Html.TextBoxFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Password" })*@
                                     </div>
                                     <div class="col-md-4 mt-3">
-                                        <button type="submit" class="form-control" style="height: 40px; background-color:green; color:white; border-radius: 10px;">Add Teacher</button>
-                                    </div>
+                                        @*<button type="submit" class="form-control"  onclick="location.href='@Url.Action("AddTeacher", "AdminAddteacher")'" style="height: 40px; background-color:green; color:white; border-radius: 10px;">Add Teacher</button>*@
+                                        @*@Html.ActionLink("AddTeacher", "AddTeacher","AdminAddteacher")*@
+                                        @*<input type="submit" name="b1" value="addteacher" onclick="location.href='@Url.Action("TeacherEditProfileView","AdminAddteacher")'"/>
+                                        <input type="submit" name="b1" value="Update" onclick="location.href='@Url.Action("TeacherEditProfileView","AdminAddteacher")'"/>*@
+
+                                        <input type="submit" name="b1" value="cancel"  onclick="location.href='@Url.Action("TeacherView","AdminAddteacher")'" />
+                                        <input type="submit" name="b1" value="Update"/>
+                                       </div>
                                 </div><br />
                                 <!-- <input type="submit" class="btn btn-success" id="submit" value="submit" onclick="call();" style="height: 30px; width: 130px;"><br> -->
                             </div>
@@ -281,4 +293,5 @@
             </div>
         </div>
     </body>
-}
+                            }
+        

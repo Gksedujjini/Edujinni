@@ -10,11 +10,11 @@ namespace Edujinni.Models
     public class TeacherModels
     {
         public int teacher_id { get; set; }
-        public byte[] teacher_image { get; set; }
+        public string  teacher_image { get; set; }
         public string teacher_first_name { get; set; }
         public string teacher_last_name { get; set; }
         public string teacher_email { get; set; }
-        public long teacher_phone_no { get; set; }
+        public string teacher_phone_no { get; set; }
         public System.DateTime teacher_dob { get; set; }
         public string teacher_gender { get; set; }
         public string teacher_subject1 { get; set; }
@@ -29,10 +29,10 @@ namespace Edujinni.Models
         public int teacher_pincode { get; set; }
         public System.DateTime teacher_date_of_joining { get; set; }
         public string insert_by { get; set; }
-        public Nullable<System.DateTime> insert_date { get; set; }
+        public DateTime insert_date { get; set; }
         public string update_by { get; set; }
-        public Nullable<System.DateTime> update_date { get; set; }
-        public Nullable<int> class_id { get; set; }
+        public DateTime update_date { get; set; }
+        public int class_id { get; set; }
         // added for dropdownlist purpose
         public string class_name { get; set; }
         public int school_id { get; set; }
@@ -41,6 +41,10 @@ namespace Edujinni.Models
         public string teacher_street1 { get; set; }
         public string teacher_status { get; set; }
         public string teacher_fullname { get;set; }
+        public string section_name { get; set; }
+        public int section_id { set; get; }
+        public string subject_name { get; set; }
+        public int subject_id { get; set; }
     }
     //public class TeacherModels
     //{

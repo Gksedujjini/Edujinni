@@ -2,8 +2,9 @@
 @{
 // Layout = null;
 }
-
-<!DOCTYPE html>
+@using (Html.BeginForm("TeacherInfo","AdminAddteacher",FormMethod.Post))
+{
+    <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -201,7 +202,7 @@
             @Html.TextBoxFor(Model => Model.teacher_pincode, new { @class = "form-control", @id = "fn" })
         </div>
         <div class="col-md-2 col-sm-12 col-xs-12 mt-4">
-            <button type="button" onclick="location.href='@Url.Action("TeacherEditProfileView","Admin")'" class="btn" style="width:110px; border-radius:5px; height:35px;  background-color:#5A5C59; color:white;">Edit</button>
+            <button type="button" onclick="location.href='@Url.Action("TeacherEditProfileView", "Admin")'" class="btn" style="width:110px; border-radius:5px; height:35px;  background-color:#5A5C59; color:white;">Edit</button>
         </div>
         <div class="col-md-2 col-sm-12 col-xs-12 mt-4">
             <button type="button" class="btn btn-danger" style="width:110px; border-radius:5px; height:35px;">Delete</button>
@@ -210,3 +211,4 @@
     <br />
 </body>
 </html>
+}

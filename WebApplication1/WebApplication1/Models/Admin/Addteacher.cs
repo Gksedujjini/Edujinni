@@ -12,7 +12,7 @@ namespace Edujinni.Models
     {
         public int teacher_id { get; set; }
         [Required(ErrorMessage ="Please Select Profile Image")]
-        public byte[] teacher_image { get; set; }
+        public string teacher_image { get; set; }
         [Required(ErrorMessage ="Please Enter First Name")]
         public string teacher_first_name { get; set; }
         [Required(ErrorMessage = "Please Enter Last Name")]
@@ -22,7 +22,7 @@ namespace Edujinni.Models
         public string teacher_email { get; set; }
         [Required(ErrorMessage = "Please Enter Mobile Number")]
         [StringLength(10,MinimumLength =10, ErrorMessage = "Invalid Mobile Number")]
-        public long teacher_phone_no { get; set; }
+        public string teacher_phone_no { get; set; }
         [Required(ErrorMessage = "Please Select Date of Birth")]
         public System.DateTime teacher_dob { get; set; }
         [Required(ErrorMessage ="Please Select Gender")]
@@ -62,6 +62,7 @@ namespace Edujinni.Models
         public string teacher_street1 { get; set; }
         // declared for update purpose
         public string teacher_fullname { get; set; }
+        public string teacher_status { get; set; }
 
     }
 }

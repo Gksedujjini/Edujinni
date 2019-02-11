@@ -128,6 +128,7 @@
                             // IN THIS SECTION THE DATA IS SHOWN
                             <table class="table table-striped">
                                 <tr>
+                                    @*<th>teacher_id</th>*@
                                     <th>Teacherid</th>
                                     <th>TeacherFullName</th>
                                     <th>subject</th>
@@ -139,12 +140,13 @@
                                     @foreach (var item in  ViewBag.x)
                                     {
                                         <tr>
-                                            <td>@item.teacher_teacherid</td>
+                                            <td>@item.teacher_id</td>
+                                            @*<td>@item.teacher_teacherid</td>*@
                                             <td>@item.teacher_fullname</td>
                                            <td>@item.teacher_subject1</td>
                                             <td>@item.teacher_phone_no</td>
                                             <td> @Html.ActionLink("Edit", "TeacherEditProfileView", "AdminAddteacher",
-                                                routeValues: new { id = item.teacher_teacherid },
+                                                routeValues: new { id = item.teacher_id },
                                             htmlAttributes: new { @class = "icon-1 info-tooltip", @Title = "Edit" })</td>
                                            <td> @Html.ActionLink("Delete", "", "")</td>
                                         </tr>

@@ -1,8 +1,8 @@
-﻿@model Edujinni.Models.Editprofile
+﻿@model Edujinni.Models.addstudent
 @{
 // Layout = null;
 }
-@using (Html.BeginForm("EditProfile", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("EditStudent", "AdminAddstudent", FormMethod.Post))
 {
     <head>
         <meta charset="utf-8">
@@ -13,29 +13,19 @@
         <script src="https://code.jquery.com/jquery-3.3.1.js"
                 integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
                 crossorigin="anonymous"></script>
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript" />
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript" />
-        <script src="~/Scripts/jquery.validate.js"></script>
         <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-        <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
-        <link href="~/Content/sb-admin.css" rel="stylesheet">
-        <title>Edit Profile</title>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/humanity/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
-            function readURL(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        $('#blah').attr('src', e.target.result);
-                    }
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-            $("#imgInp").change(function () {
-                readURL(this);
-            });
-
+        $.noConflict();
+        jQuery(document).ready(function ($) {
+            $("#dob").datepicker({Changemonth:true,Changeyear:true});
+        });
+        </script>
+        <title>Add Student</title>
+        <script>
             $(document).ready(function () {
                     $('#upload-data').click(function () {
                         $('#getfile').trigger('click');
@@ -61,11 +51,6 @@
                 });
         </script>
         <style>
-            /*@@media only screen and (min-width: 359px) {
-              #image {
-                max-width:220px;
-              }
-            }*/
             .form-control {
                 border-radius: 20px;
                 background-color: #f2f2f2;
@@ -112,52 +97,37 @@
             }
 
             #upload-data {
-                margin-right: 15px;
+                margin-right: -15px;
                 color: black;
-                margin-top: -10px;
+                margin-top: 12px;
             }
 
             #image {
-                background-color: none;
-                margin-top: 10px;
+                background-color: silver;
                 text-align: right;
                 width: 255px;
                 height: 100px;
                 border-radius: 10px;
-                margin-top: 10px;
-            }
-
-            #img1 {
-                width: 190px;
-                height: 100px;
-                margin-top: 20px;
             }
 
             #image1 {
-                margin-left: 25px;
-                background-color: none;
+                margin-left: 33px;
+                background-color: silver;
                 width: 130px;
                 height: 100px;
                 text-align: right;
-                border-radius: 10px;
-                margin-top: 24px;
-            }
-
-            #img2 {
-                width: 130px;
-                height: 100px;
                 border-radius: 10px;
             }
 
             #upload-data1 {
                 margin-right: -15px;
                 color: black;
-                margin-top: 112px;
+                margin-top: 80px;
             }
 
-            #addondiv {
-                width: 270px;
-                margin-top: 10px;
+            #stdId {
+                color: white;
+                background-color: blue;
             }
 
             #btn1 {
@@ -174,142 +144,185 @@
         </style>
     </head>
     <body>
+        @{
+            List<SelectListItem> list = new List<SelectListItem>();
+            //foreach (var item in ViewBag.clsname)
+            //{
+            //    list.Add(@item.class_name);
+            //}
+
+        }
         <div>
             <div class="row ml-2 mr-2">
                 <div class="col-md-12 mr-1">
-                    @*<img id="blah" alt="your image" width="100" height="100" />*@
-                    <form action="#">
-                        <div class="row mt-3">
-                            <div class="ml-3 mt-2 mr-3" id="image">
-                                <center>
-                                    <img src="" alt="School Logo" id="img1" />
-                                </center>
-                                <i class="fa fa-plus-circle upload-data" id="upload-data"></i>
-                                <input class="getfile" id="getfile" style="display: none;" type="file" accept="image/*"
-                                       onchange="document.getElementById('img1').src = window.URL.createObjectURL(this.files[0])" />
-                            </div>
-                            @*<div class="mt-2" id="image1">*@
-                            <img src="" alt="User Image" id="image1" />
-                            @*<center><i class="fa fa-user fa-5x" style="color:blue;"></i></center>*@
-                            <i class="fa fa-plus-circle upload-data" id="upload-data1"></i>
-                            <input class="" id="getfile1" style="display: none;" type="file" accept="image/*"
-                                   onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])" />
-                            @*</div>*@
-                            <div class="co ml-5" id="addondiv">
-                                <div class="row mt-2">
-                                    <div class="col-md-12 mt-3 input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon3">Principal ID</span>
-                                        </div>
-                                        @Html.TextBoxFor(Model => Model.PrincipalId, new { @class = "form-control", value = "12436576", @id = "basic-url"})
-                                        @*<input type="text" name="" value="12436576" class="form-control" id="basic-url" aria-describedby="basic-addon3"*@>
+                    <div class="row mt-3">
+                        @*<div class="mt-2" id="image1">*@
+                        <img src="" alt="User Image" id="image1" />
+                        @*<center><i class="fa fa-user fa-5x" style="color:blue;"></i></center>*@
+                        <i class="fa fa-plus-circle upload-data" id="upload-data1"></i>
+                        <input class="" id="getfile1" style="display: none;" type="file" accept="image/*"
+                               onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])" />
+                        @*</div>*@
+                        <div class="col ml-1">
+                            <div class="row mt-2">
+                                <div class="col-md-3 mt-5 input-group">
+                                    <div class="form-check form-check-inline  mt-1">
+                                        @Html.RadioButtonFor(Model => Model.student_gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
+                                        <label class="form-check-label" for="inlineCheckboxMale">Male</label>
                                     </div>
-                                </div> <div class="row mt-4">
-                                    <div class="col-md-12 input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon3">School Name</span>
-                                        </div>
-                                        @Html.TextBoxFor(Model => Model.SchoolName, new { @class = "form-control", value = "12436576", @id = "basic-url" })
-                                        @*<input type="text" name="" value="Kakathiya School" class="form-control" id="basic-url" aria-describedby="basic-addon3">*@
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-3 input-group">
+                                    <div class="form-check form-check-inline  mt-1">
+                                        @Html.RadioButtonFor(Model => Model.student_gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale", @style = "margin-left:15px" })
+                                        <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row mt-5">
-                            <div class="col-md-4 mt-2">
-                                @Html.TextBoxFor(Model => Model.PhoneNo, new { @class = "form-control", @placeholder = "Phone NO" })
-                                @Html.ValidationMessageFor(Model=>Model.PhoneNo,"",new{@class="text-danger"})
-                            </div>
-                            <div class="col-md-4 ml-auto mt-2">
-                                @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control", @placeholder = "Email ID" })
-                                @Html.ValidationMessageFor(Model => Model.Email, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-3 ml-auto mt-4">
-                                <div class="form-check form-check-inline ml-auto">
-                                    @Html.RadioButtonFor(Model => Model.Gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
-                                    <label class="form-check-label" for="inlineCheckboxMale">Male</label>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-md-12 ml-auto">
+                            <div class="row">
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_first_name, new { @class = "form-control", @placeholder = "First Name" })
+                                    @Html.ValidationMessageFor(Model => Model.student_first_name, "", new { @class = "text-danger" })
                                 </div>
-                                <div class="form-check form-check-inline ml-3">
-                                    @Html.RadioButtonFor(Model => Model.Gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" })
-                                    <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
-                                </div>@Html.ValidationMessageFor(Model => Model.Gender, "", new { @class = "text-danger" })
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_last_name, new { @class = "form-control", @placeholder = "Last Name" })
+                                    @Html.ValidationMessageFor(Model => Model.student_last_name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-2 mt-2">
+                                    @Html.DropDownListFor(Model => Model.student_class, list, new { @class = "form-control", @placeholder = "Class" })
+                                </div>
+                                <div class="col-md-2 mt-2">
+                                    @Html.DropDownListFor(Model => Model.student_section, list, new { @class = "form-control", @placeholder = "Class" })
+                                    @Html.ValidationMessageFor(Model => Model.student_section, "", new { @class = "text-danger" })
+                                    @*<select name="section" class="form-control" id="section" placeholder="Section" style="">
+                                            <option selected="selected">--Select Section--</option>
+                                            <option>A</option>
+                                        </select>*@
+                                </div>
                             </div>
                         </div>
-                        <div class="form-row mt-4">
-                            <div class="col-md-4 mt-2">
-                                @Html.TextBoxFor(Model => Model.FlatNO, new { @class = "form-control", @placeholder = "Flat No" })
-                                @Html.ValidationMessageFor(Model => Model.FlatNO, "", new { @class = "text-danger" })
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_roll_no, new { @class = "form-control", @placeholder = "Roll No" ,@readonly = "readonly" })
+                                    @*@Html.ValidationMessageFor(Model => Model.student_roll_no, "", new { @class = "text-danger" })*@
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_id, new { @class = "form-control", @id = "stdId", @placeholder = "Student ID" ,@readonly="readonly"})
+                                        @*@Html.ValidationMessageFor(Model=>Model.student_id)*@
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_dob, new { @class = "form-control", @placeholder = "Date of Birth", @id = "dob", @name = "date" })
+                                    @Html.ValidationMessageFor(Model => Model.student_dob, "", new { @class = "text-danger" })
+                                    <span class="glyphicon glyphicon-calendar form-control-feedback mr-4" style="margin-right:-15px;"></span>
+                                </div>
+                            </div><br>
+                            <hr>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <b>Family Information</b>
+                        <div class="col-md-12">
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_father_name, new { @class = "form-control", @placeholder = "Father Name" })
+                                    @Html.ValidationMessageFor(Model => Model.student_father_name, "", new { @class = "error" })
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_father_mobile_no, new { @class = "form-control", @placeholder = "Father Mobile No" })
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_father_occupation, new { @class = "form-control", @placeholder = "Father Occupation" })
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_mother_name, new { @class = "form-control", @placeholder = "Mother Name" })
+                                    @Html.ValidationMessageFor(Model => Model.student_mother_name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_mother_mobile_no, new { @class = "form-control", @placeholder = "Mother Mobile No" })
+                                    @Html.ValidationMessageFor(Model => Model.student_mother_mobile_no, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_mother_occupation, new { @class = "form-control", @placeholder = "Mother Occupation" })
+                                    @Html.ValidationMessageFor(Model => Model.student_mother_occupation, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                            <div class="col-md-4 ml-auto mt-2">
-                                @Html.TextBoxFor(Model => Model.Street, new { @class = "form-control", @placeholder = "Street" })
-                                @Html.ValidationMessageFor(Model => Model.Street, "", new { @class = "text-danger" })
+                            <br>
+                            <div class="row">
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_no_of_siblings, new { @class = "form-control", @placeholder = "Sibbling Name" })
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_no_of_siblings, new { @class = "form-control", @placeholder = "Age" })
+                                </div><br>
+
+                            </div><br>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label><b>Address</b></label>
+                        <div class="col-md-12">
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_flat_no, new { @class = "form-control", @placeholder = "Flat No" })
+                                    @Html.ValidationMessageFor(Model => Model.student_flat_no, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_buliding_name, new { @class = "form-control", @placeholder = "Building Name" })
+                                    @Html.ValidationMessageFor(Model => Model.student_buliding_name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_street, new { @class = "form-control", @placeholder = "Street 1" })
+                                    @Html.ValidationMessageFor(Model => Model.student_street, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                            <div class="col-md-3 ml-auto mt-2">
-                                @*@Html.TextBoxFor(Model => Model.SchoolPhoneNo, new { @class = "form-control", @placeholder = "School Phone No" })*@
+                            <br>
+                            <div class="row">
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_street1, new { @class = "form-control", @placeholder = "Street 2" })
+                                    @Html.ValidationMessageFor(Model => Model.student_street1, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_area, new { @class = "form-control", @placeholder = "Area" })
+                                    @Html.ValidationMessageFor(Model => Model.student_area, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_city, new { @class = "form-control", @placeholder = "City" })
+                                    @Html.ValidationMessageFor(Model => Model.student_city, "", new { @class = "text-danger" })
+                                </div>
+                            </div><br>
+                            <div class="row mb-3">
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_state, new { @class = "form-control", @placeholder = "State" })
+                                    @Html.ValidationMessageFor(Model => Model.student_state, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-4 mt-2">
+                                    @Html.TextBoxFor(Model => Model.student_pincode, new { @class = "form-control", @placeholder = "Area Code" })
+                                    @Html.ValidationMessageFor(Model => Model.student_pincode, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-2 mt-2">
+                                    <button type="submit" class="btn btn-success" style="height: 40px; width: 190px;border-radius: 20px;">Update</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-row mt-4">
-                            <div class="col-md-4 mt-2">
-                                @Html.TextBoxFor(Model => Model.AreaCityState, new { @class = "form-control", @placeholder = "Area, City, State" })
-                                @Html.ValidationMessageFor(Model => Model.AreaCityState, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-4 ml-auto mt-2">
-                                @Html.TextBoxFor(Model => Model.PinCode, new { @class = "form-control", @placeholder = "Pincode" })
-                                @Html.ValidationMessageFor(Model => Model.PinCode, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-3 ml-auto mt-2">
-                                @*@html.textboxfor(model => model.schoolphoneno, new { @class = "form-control", @placeholder = "school phone no" })*@
-                            </div>
-                        </div>
-                        <div class="row mt-5 ml-2"><label><b>School Address</b></label></div>
-                        <div class="form-row">
-                            <div class="col-md-4 mt-2">
-                                @Html.TextBoxFor(Model => Model.SchoolAddrFlatNO, new { @class = "form-control", @placeholder = "Flat No" })
-                            </div>
-                            <div class="col-md-4 ml-auto mt-2">
-                                @Html.TextBoxFor(Model => Model.Street, new { @class = "form-control", @placeholder = "Street 1" })
-                            </div>
-                            <div class="col-md-3 ml-auto mt-2">
-                                @Html.TextBoxFor(Model => Model.SchoolPhoneNo, new { @class = "form-control", @placeholder = "School Phone No" })
-                            </div>
-                        </div>
-                        <div class="form-row mt-4">
-                            <div class="col-md-4 mt-2">
-                                @Html.TextBoxFor(Model => Model.SchoolAddrAreaCity, new { @class = "form-control", @placeholder = "Area, City" })
-                            </div>
-                            <div class="col-md-4 ml-auto mt-2">
-                                @Html.TextBoxFor(Model => Model.SchoolAddrState, new { @class = "form-control", @placeholder = "State" })
-                            </div>
-                            <div class="col-md-3 ml-auto mt-2">
-                                @Html.TextBoxFor(Model => Model.SchoolAddrePinCode, new { @class = "form-control", @placeholder = "Pincode" })
-                            </div>
-                        </div>
-                        <div class="row mt-5 ml-2"><label><b>Change Password</b></label></div>
-                        <div class="form-row">
-                            <div class="col-md-4 mt-2">
-                                @Html.PasswordFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Type Password" })
-                                @Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-4 ml-auto mt-2">
-                                @Html.PasswordFor(Model => Model.ConfirmPassword, new { @class = "form-control", @placeholder = "Retype Password" })
-                                @Html.ValidationMessageFor(Model => Model.ConfirmPassword, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-3 ml-auto mt-2">
-                            </div>
-                        </div>
-                        <div class="form-row mt-4">
-                            <div class="col-md-4 mt-2">
-                            </div>
-                            <div class="col-md-4 ml-auto mt-2">
-                                <input type="button" class="form-control" Value="Edit" id="btn1" style="border-radius:10px;">
-                            </div>
-                            <div class="col-md-3 ml-auto mt-2 mb-1">
-                                <input type="submit" class="form-control" value="Save" id="btn2" style="border-radius:10px;">
-                            </div>
-                        </div><br />
-                    </form>
+                    </div><br />
                 </div>
             </div>
         </div>
     </body>
-}
+            }

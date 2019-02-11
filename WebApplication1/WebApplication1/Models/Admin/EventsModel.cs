@@ -28,9 +28,8 @@ namespace Edujinni.Models
         public string event_image { get; set; }
         public string event_name { get; set; }
         public int school_id { get; set; }
-        public int event_id { get; set;}
-            
-        }
+        public int event_id { get; set;}            
+    }
     //public class RootObject
     //{
     //    public int code { get; set; }

@@ -66,6 +66,7 @@ namespace Edujinni.Models
 
         // public Nullable<System.DateTime> insert_date { get; set; }
         public string student_image { get; set; }
+        public string student_id { get; set; }
         public string student_section { get; set; }
         public string student_first_name { get; set; }
         public string student_last_name { get; set; }

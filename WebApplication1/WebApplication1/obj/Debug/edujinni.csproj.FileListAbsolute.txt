@@ -348,4 +348,3 @@ E:\New folder\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.Twitte
 E:\New folder\WebApplication1\WebApplication1\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\New folder\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 E:\New folder\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
-E:\New folder\WebApplication1\WebApplication1\obj\Debug\edujinni.csprojResolveAssemblyReference.cache

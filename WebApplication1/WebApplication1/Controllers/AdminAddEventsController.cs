@@ -91,7 +91,6 @@ namespace WebApplication1.Controllers
                 client.BaseAddress = new Uri("http://www.edujinni.in/");
                 updatedetails.school_id = 1;
                 updatedetails.event_id = id;
-                //updatedetails.event_name = name;
                 var upd = client.PostAsJsonAsync<EventsModel>("eventsList", updatedetails);
                 upd.Wait();
                 var result = upd.Result;
@@ -113,7 +112,7 @@ namespace WebApplication1.Controllers
                 }
                 else { Response.Write("<script>Error Retreiving</script>"); }
             }
-            Response.Write("<script>Error adding the Event</script>");
+           // Response.Write("<script>Error adding the Event</script>");
             ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
             return View(eve);
         }

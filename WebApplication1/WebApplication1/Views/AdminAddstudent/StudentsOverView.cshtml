@@ -88,7 +88,7 @@
     </head>
     <body>
         @{ 
-            List<SelectListItem> list = new List<SelectListItem>();
+           List<SelectListItem> list = new List<SelectListItem>();
             //list.Add(ViewBag.classnames);
                         }
         <div class="row">
@@ -102,13 +102,13 @@
         <div class="container-fluid">
     <div class="row mt-4">
         <div class="col-md-6">
-            @*@Html.DropDownListFor(Model => Model.class_name,list, "Class", new { @class = "form-control" })*@
-            <select id="sltCustomers" name="sltCustomers" class="form-control">
+            @Html.DropDownListFor(Model => Model.class_name,list, "Class", new { @class = "form-control" })
+            @*<select id="sltCustomers" name="sltCustomers" class="form-control">
                 @foreach (var item in ViewBag.classnames)
                 {
                     <option>@item.class_name</option>
                 }
-            </select>
+            </select>*@
        </div>
         <div class="col-md-6">
             @*@Html.DropDownListFor(Model => Model.section_name, list, "Section", new { @class = "form-control" })*@

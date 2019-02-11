@@ -57,6 +57,14 @@ namespace Edujinni.Models
     //    //} 
     public class StudentModel
     {
+        //internal string insert_by;
+        //internal string update_by;
+        //internal DateTime insert_date;
+        //internal DateTime update_date;
+        //internal string student_class;
+        //internal string student_password;
+        //internal string parent_password;
+
         public string Address { get; set; }
         public string Achievements { get; set; }
         public Int32 marks { get; set; }
@@ -65,7 +73,7 @@ namespace Edujinni.Models
         public DateTime student_admission_date { get; set; }
         public string student_area { get; set; }
         public string student_buliding_name { get; set; }
-        public int student_chiled_no { get; set; }
+        public int? student_chiled_no { get; set; }
         public string student_city { get; set; }
         public DateTime student_dob { get; set; }
         public long student_father_mobile_no { get; set; }
@@ -93,6 +101,7 @@ namespace Edujinni.Models
         public int section_id { get; set; }
         public string grade { get; set; }
         public string attendance { get; set; }
+        public List<StudentModel> Data { get; set; }
     }
 
     public class RootObject
